@@ -1,0 +1,25 @@
+{
+  "name": "equabank-scraper",
+  "version": "0.0.1",
+  "description": "A Node.js library for scraping Equabank internet banking website to get information about transactions, balance, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hohy/equabank-scraper.git"
+  },
+  "keywords": [
+    "scraper",
+    "banking",
+    "transactions",
+    "equabank"
+  ],
+  "author": "Jan Hybl <jonnyxxx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hohy/equabank-scraper/issues"
+  },
+  "homepage": "https://github.com/hohy/equabank-scraper#readme"
+}
