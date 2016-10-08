@@ -4,7 +4,8 @@
   "description": "A Node.js library for scraping Equabank internet banking website to get information about transactions, balance, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --check-leaks"
+    "test": "mocha --recursive --check-leaks",
+    "lint": "eslint --ext .js* --fix index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/hohy/equabank-scraper#readme",
   "devDependencies": {
+    "@strv/eslint-config-javascript": "^6.0.0-alpha.1",
     "chai": "^3.5.0",
     "mocha": "^3.1.0"
   }
