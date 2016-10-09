@@ -2,6 +2,7 @@
 
 const expect = require('chai').expect
 const EquabankScraper = require('../index')
+const fs = require('fs')
 
 describe('Lets do some basic testing', () => {
 
@@ -11,16 +12,23 @@ describe('Lets do some basic testing', () => {
   })
 
   it('Should log in and return accounts data',
-    function test(done) {
+    function test() {
       this.timeout(10000)
       const equabank = new EquabankScraper()
       return equabank.login(process.env.EQUA_USERNAME, process.env.EQUA_PASSWORD)
         .then(results => {
           console.log(JSON.stringify(results))
-          done()
         }).catch(err => {
           console.error(err)
         })
+    })
+
+    it('Should parse the home page', (done) => {
+      const equabank = new EquabankScraper()
+      const homePage = fs.readFileSync('./resources/home.html')
+      const result = equabank.parseHomePage(homePage)
+      console.log(JSON.stringify(result))
+      done()
     })
 
 })

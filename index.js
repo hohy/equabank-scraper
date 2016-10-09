@@ -89,26 +89,26 @@ class EquabankScraper {
       return utils.writeToFile('/tmp/home.html', homePage)
     })
     // process the main page
-    .then(homePage => {
-      console.log('Home page loaded')
-      const $ = cheerio.load(homePage)
-      if ($('body#homepage')) {
-        // get list of accounts
-        const accounts = []
-        let account = $('table#currentAccountsTableId tr')
-        while (account) {
-          const id = account.find('td.account span').text()
-          const name = account.find('td.account a').text()
-          const balance = account.find('td.total').text()
-          accounts.push({ id, name, balance })
-          account = account.next()
-        }
-        console.log(JSON.stringify(accounts))
-        return accounts
-      }
-      throw new Error('Error while parsing home page')
-    })
+    .then(this.parseHomePage)
     .then(callback)
+  }
+
+  parseHomePage(homePage) {
+    const $ = cheerio.load(homePage)
+    if ($('body#homepage')) {
+      // get list of accounts
+      const accounts = []
+      const accountElements = $('table#currentAccountsTableId tr').next()
+      accountElements.each((index, account) => {
+        account = $(account)
+        const id = account.find('td.account span').text()
+        const name = account.find('td.account a').text()
+        const balance = account.find('td.total').text()
+        accounts.push({ id, name, balance })
+      })
+      return accounts
+    }
+    throw new Error('Error while paring home page')
   }
 
 }
