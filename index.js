@@ -1,6 +1,7 @@
 'use strict'
 
 const utils = require('./utils')
+const parser = require('./parser')
 const axios = require('axios')
 const cheerio = require('cheerio')
 
@@ -27,6 +28,7 @@ const http = axios.create({
  * @returns {Promise} Object with basic info about accounts from the home page
  */
 function login(username, password, callback) {
+  let action
   console.log('Loading login page...')
     // load the login page
   const getLoginData = {
@@ -77,6 +79,8 @@ function login(username, password, callback) {
       return http.post(`/${loginData.loginAction}`, utils.object2FormData(loginFormData))
       .then(response => {
         if (response.status === 200) {
+          const $ = cheerio.load(response.data)
+          action = parser.parseAction($)
           return response.data
         }
         throw new Error('Error while loading main page')
@@ -86,25 +90,13 @@ function login(username, password, callback) {
       return utils.writeToFile('/tmp/home.html', homePage)
     })
     // process the main page
-    .then(parseHomePage)
+    .then(parser.parseHomePage)
+    .then(data => {
+      return {
+        action,
+        data
+      }
+    })
     .then(callback)
 }
 module.exports.login = login
-
-function parseHomePage(homePage) {
-  const $ = cheerio.load(homePage)
-  if ($('body#homepage')) {
-      // get list of accounts
-    const accounts = []
-    const accountElements = $('table#currentAccountsTableId tr').next()
-    accountElements.each((index, account) => {
-      account = $(account)
-      const id = account.find('td.account span').text()
-      const name = account.find('td.account a').text()
-      const balance = account.find('td.total').text()
-      accounts.push({ id, name, balance })
-    })
-    return accounts
-  }
-  throw new Error('Error while paring home page')
-}
