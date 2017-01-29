@@ -28,7 +28,7 @@ const http = axios.create({
  * @returns {Promise} Object with basic info about accounts from the home page
  */
 function login(username, password, callback) {
-  let action
+  let action, $
   console.log('Loading login page...')
     // load the login page
   const getLoginData = {
@@ -49,7 +49,7 @@ function login(username, password, callback) {
     })
     // parse usefull data from the login page
     .then(loginPage => {
-      const $ = cheerio.load(loginPage)
+      $ = cheerio.load(loginPage)
       if ($('body#login')) {
         return {
           loginAction: $('form#simpleForm').attr('action'),
@@ -79,7 +79,7 @@ function login(username, password, callback) {
       return http.post(`/${loginData.loginAction}`, utils.object2FormData(loginFormData))
       .then(response => {
         if (response.status === 200) {
-          const $ = cheerio.load(response.data)
+          $ = cheerio.load(response.data)
           action = parser.parseAction($)
           return response.data
         }
@@ -90,7 +90,9 @@ function login(username, password, callback) {
       return utils.writeToFile('/tmp/home.html', homePage)
     })
     // process the main page
-    .then(parser.parseHomePage)
+    .then(() => {
+      return parser.parseHomePage($)
+    })
     .then(data => {
       return {
         action,
@@ -100,3 +102,45 @@ function login(username, password, callback) {
     .then(callback)
 }
 module.exports.login = login
+
+function getTransactions(action, callback) {
+  let action, $
+  return http.post(action, generateCommandString('mov_filterPage'))
+    .then(response => {
+      console.log('Transactions page loaded.')
+      if (response.status === 200) {
+          $ = cheerio.load(response.data)
+          action = parser.parseAction($)
+          return response.data
+      }
+      throw new Error('Error while loading login page')
+    })
+    .then(transactionsPage => {
+      return utils.writeToFile('/tmp/transactions.html', transactionsPage)
+    })
+  .then(callback)
+}
+module.exports.getTransactions = getTransactions
+
+/**
+ * Construct string that is posted to the IBS ControllerServlet describing
+ * the action should be performed.
+ * @param {String} command  Command string for performed action
+ * @returns {String} string for ControllerServlet
+ */
+function generateCommandString(command) {
+  const commandObject = {
+    command,
+    custom1: 0,
+    custom2: 0,
+    custom3: 0,
+    custom4: 0,
+    custom5: 0,
+    operID: '',
+    filterString: '',
+    verificationGroupName: '',
+    requiredList: '',
+    removeCommand: ''
+  }
+  return utils.object2FormData(commandObject)
+}

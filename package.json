@@ -24,8 +24,9 @@
   },
   "homepage": "https://github.com/hohy/equabank-scraper#readme",
   "devDependencies": {
-    "@strv/eslint-config-javascript": "^6.0.0-alpha.1",
+    "@strv/eslint-config-javascript": "^6.4.0",
     "chai": "^3.5.0",
+    "eslint": "^3.14.1",
     "mocha": "^3.1.0",
     "rewire": "^2.5.2"
   },
