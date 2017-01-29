@@ -28,7 +28,7 @@ const http = axios.create({
  * @returns {Promise} Object with basic info about accounts from the home page
  */
 function login(username, password, callback) {
-  let action, $
+  let page
   console.log('Loading login page...')
     // load the login page
   const getLoginData = {
@@ -49,7 +49,7 @@ function login(username, password, callback) {
     })
     // parse usefull data from the login page
     .then(loginPage => {
-      $ = cheerio.load(loginPage)
+      const $ = cheerio.load(loginPage)
       if ($('body#login')) {
         return {
           loginAction: $('form#simpleForm').attr('action'),
@@ -78,24 +78,24 @@ function login(username, password, callback) {
       console.log('Performing login, loading home page ...')
       return http.post(`/${loginData.loginAction}`, utils.object2FormData(loginFormData))
       .then(response => {
-        if (response.status === 200) {
-          $ = cheerio.load(response.data)
-          action = parser.parseAction($)
-          return response.data
-        }
+        console.log('Home page loaded')
+        page = processPage(response.data)
+      })
+      .catch(err => {
+        console.error(err)
         throw new Error('Error while loading main page')
       })
     })
-    .then(homePage => {
-      return utils.writeToFile('/tmp/home.html', homePage)
+    .then(() => {
+      return utils.writeToFile('/tmp/home.html', page.raw)
     })
     // process the main page
     .then(() => {
-      return parser.parseHomePage($)
+      return parser.parseHomePage(page.parsed)
     })
     .then(data => {
       return {
-        action,
+        action: page.action,
         data
       }
     })
@@ -104,19 +104,17 @@ function login(username, password, callback) {
 module.exports.login = login
 
 function getTransactions(action, callback) {
-  let action, $
+  let page
   return http.post(action, generateCommandString('mov_filterPage'))
     .then(response => {
       console.log('Transactions page loaded.')
-      if (response.status === 200) {
-          $ = cheerio.load(response.data)
-          action = parser.parseAction($)
-          return response.data
-      }
-      throw new Error('Error while loading login page')
+      page = processPage(response.data)
     })
-    .then(transactionsPage => {
-      return utils.writeToFile('/tmp/transactions.html', transactionsPage)
+    .catch(err => {
+      throw new Error('Error while loading login page', err)
+    })
+    .then(() => {
+      return utils.writeToFile('/tmp/transactions.html', page.raw)
     })
   .then(callback)
 }
@@ -143,4 +141,21 @@ function generateCommandString(command) {
     removeCommand: ''
   }
   return utils.object2FormData(commandObject)
+}
+
+/**
+ * Process the page.
+ * Take the raw reponse from the server and proces it to the object we can 
+ * continue to work with.
+ * @param {String} data Response body from the server
+ * @returns {Object} unified page object
+ */
+function processPage(data) {
+  const $ = cheerio.load(data)
+  const action = parser.parseAction($)
+  return {
+    parsed: $,
+    action,
+    raw: data
+  }
 }
