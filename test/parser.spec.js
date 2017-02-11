@@ -24,4 +24,12 @@ describe('Parser tests', () => {
     expect(parseBalance('12 345 CZK')).to.eql({ balance: 12345, currency: 'CZK' })
     expect(parseBalance('12 345,67 CZK')).to.eql({ balance: 12345.67, currency: 'CZK' })
   })
+
+  it('Should parse the transaction history page', done => {
+    const transactionsPage = fs.readFileSync('./test/resources/transactions.html')
+    const $ = cheerio.load(transactionsPage)
+    const result = parser.parseTransactionsPage($)
+    console.log(JSON.stringify(result))
+    done()
+  })
 })

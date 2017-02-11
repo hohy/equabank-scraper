@@ -1,4 +1,5 @@
 'use strict'
+const moment = require('moment')
 
 /**
  * Parse action URL with the session id from the page.
@@ -34,6 +35,34 @@ function parseHomePage($) {
 }
 
 module.exports.parseHomePage = parseHomePage
+
+function parseTransactionsPage($) {
+  const transactions = []
+  const transactionElements = $('table#transaction-history tr').next()
+  transactionElements.each((index, transaction) => {
+    transaction = $(transaction)
+    const date = moment(transaction.find('td.highlight strong').text(), 'DD.MM.YYYY').toDate()
+    const type = transaction.find('td a strong').text()
+    const fromToString = transaction.find('td span.small').text()
+    let from, to, direction
+    if (fromToString.indexOf('<-') === -1) {
+      direction = 'OUT'
+      from = fromToString.split('->')[0]
+      to = fromToString.split('->')[1]
+    } else {
+      direction = 'IN'
+      from = fromToString.split('<-')[1]
+      to = fromToString.split('<-')[0]     
+    }
+    const ammount = parseBalance(transaction.find('td.amount').text())
+    transactions.push({ date, type, fromToString, direction, from, to, ammount })
+  })
+  return {
+    transactions
+  }
+}
+
+module.exports.parseTransactionsPage = parseTransactionsPage
 
 /**
  * Parses strings used in EquaBanking to represent account balance into JS types.
