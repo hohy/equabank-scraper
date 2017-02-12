@@ -44,18 +44,17 @@ function parseTransactionsPage($) {
     const date = moment(transaction.find('td.highlight strong').text(), 'DD.MM.YYYY').toDate()
     const type = transaction.find('td a strong').text()
     const fromToString = transaction.find('td span.small').text()
-    let from, to, direction
-    if (fromToString.indexOf('<-') === -1) {
-      direction = 'OUT'
-      from = fromToString.split('->')[0]
-      to = fromToString.split('->')[1]
+    const direction = transaction.attr('class')
+    let from, to
+    if (direction === 'outgoing') {
+      from = fromToString.split('->')[0].trim()
+      to = fromToString.split('->')[1].trim()
     } else {
-      direction = 'IN'
-      from = fromToString.split('<-')[1]
-      to = fromToString.split('<-')[0]     
+      from = fromToString.split('<-')[1].trim()
+      to = fromToString.split('<-')[0].trim()    
     }
-    const ammount = parseBalance(transaction.find('td.amount').text())
-    transactions.push({ date, type, fromToString, direction, from, to, ammount })
+    const amount = parseBalance(transaction.find('td.amount').text())
+    transactions.push({ date, type, direction, from, to, amount })
   })
   return {
     transactions

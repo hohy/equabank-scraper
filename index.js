@@ -151,6 +151,7 @@ function generateCommandString(command) {
  * @returns {Object} unified page object
  */
 function processPage(data) {
+  data = data.replace(' <- ', ' &lt;- ').replace(' -> ', ' -&gt; ')
   const $ = cheerio.load(data)
   const action = parser.parseAction($)
   return {

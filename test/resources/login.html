@@ -1,0 +1,618 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
+	<meta http-equiv="imagetoolbar" content="no" />
+<title>
+
+
+Equa bank
+</title>
+
+<script type="text/javascript">
+	var controllerServletURLjs = 'ControllerServlet;jsessionid=00011ZscbQx0E5QkeJteT1kyV5j:-810UMK';
+</script>
+<script src="script/script.js?2" type="text/javascript"></script>
+
+<script type="text/javascript">
+	window.onload = init;
+	function init() {
+		var e = e || window.event;
+
+	  if (document.captureEvents) {
+	    document.captureEvents(Event.MOUSEMOVE);
+	  }
+	  document.onmousemove = getCursorXY;
+	}
+	
+	//disable back button in web browser
+	//for IE - page expires when cache is disabled, otherwise forward to last page
+	function noBack() { window.history.forward()}
+	noBack();
+	//solution for Mozilla based browsers with bfcache - disable bfcache, forward to last page 
+	//window.onload=noBack;
+	window.onpageshow=function(evt){if(evt.persisted)noBack()} 
+	window.onunload=function(){void(0)}
+	
+	var lang = "cs";
+  
+
+	var categorizedHelpLink = 'https://www.equabanking.cz/equabank-ibs-help/modalHelp.php';
+</script>
+
+
+<span id="langForIBS" style="display: none">cs</span>
+
+<!--********************************************************************************-->
+
+<script src="script/popup.js?1" type="text/javascript"></script>
+<script type="text/javascript">
+function callKeyboardHelp()
+{
+	help("html/help09.html#virtkey");
+}
+</script>
+<!--********************************************************************************-->
+
+  
+    <link rel="stylesheet" href="style/print.css?2" type="text/css" media="print" />
+    <link rel="stylesheet" href="style/popup.css?2" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style/jquery_popup.css?2" type="text/css" media="screen" />
+
+	<link href="css/layout.css?3" rel="stylesheet" type="text/css" />
+	<link href="css/pages.css?2" rel="stylesheet" type="text/css" />	
+	<link href="css/jquery.selectbox.css?2" rel="stylesheet" type="text/css" />	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/ie7.css?2" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="css/ie.css?2" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE]>
+	<link rel="stylesheet" href="css/ie-all.css?2" type="text/css" media="screen" />
+	<![endif]-->
+
+	<link href="css/jquery.datepicker.css?2" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/bscCustom.css?2" type="text/css" media="screen" />
+
+	<script src="javascript/jquery.js?1" type="text/javascript"></script>
+
+	<script src="javascript/date.js?1" type="text/javascript"></script>
+
+	<script src="javascript/jquery.datepicker.js?1" type="text/javascript"></script>	
+
+	<script src="javascript/datepicker_text_cs.js?1" type="text/javascript"></script>
+
+	
+	<script src="javascript/jquery.selectbox.js?1" type="text/javascript"></script>
+	<script src="javascript/rangecalendar.js?1" type="text/javascript"></script>
+	<script src="javascript/main.js?5" type="text/javascript"></script>
+	<script src="javascript/authorization.js?1" type="text/javascript"></script>
+	<script src="javascript/jquery-ui.js?1" type="text/javascript"></script>
+	<script src="javascript/encoder.js?1" type="text/javascript"></script>
+	<script src="javascript/pwdStrength.js?1" type="text/javascript"></script>
+	<script src="javascript/focusFirstErrorField.js?1" type="text/javascript"></script>
+	<script src="javascript/jquery.scripts.js?2" type="text/javascript"></script>
+	<script src="javascript/jquery.caret.1.02.js?1" type="text/javascript"></script>
+  	<script src="javascript/textarea.js?2" type="text/javascript"></script>
+  
+		
+	<script type="text/javascript" src="javascript/jquery.ui.autocomplete.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.core.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.position.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.widget.js?1"></script>
+	
+	<script type="text/javascript" src="javascript/autoNumeric-1.7.4.js?1"></script> 
+	<script type="text/javascript" src="javascript/jquery.inputmask.js?1"></script>
+    <script type="text/javascript" src="javascript/jquery.inputmask.extentions.js?1"></script>    
+    
+    <script type="text/javascript" src="javascript/setFrameHeight.js?1"></script>
+	
+	<link href="css/jquery.ui.autocomplete.css?2" rel="stylesheet" type="text/css" />
+	<style>.loader {background-color: white; position: relative; z-index:3; left:0; top:0}</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="login" onload="noBack();" class="login-page lang-cs">
+
+<script src="script/hintpopup.js?1" type="text/javascript"></script>
+<script src="script/wz_tooltip.js?1" type="text/javascript"></script>
+<script src="script/tip_balloon.js?1" type="text/javascript"></script>
+<script src="script/wz_dragdrop.js?1" type="text/javascript"></script>
+<script src="script/WebRA.js?1" type="text/javascript"></script>
+
+<div style="position:absolute; visibility:hidden;">
+<form id="SortLink" method="post" action="ControllerServlet;jsessionid=00011ZscbQx0E5QkeJteT1kyV5j:-810UMK">
+<fieldset>
+<input type="hidden" name="command" value="" />
+<input type="hidden" name="custom1" value="" />
+<input type="hidden" name="custom2" value="" />
+<input type="hidden" name="custom3" value="" />
+<input type="hidden" name="custom4" value="" />
+<input type="hidden" name="custom5" value="" />
+
+<input type="hidden" name="sorting" value="" />
+<input type="hidden" name="operID" value="" />
+<input type="hidden" name="back_command" value="" />
+<input type="hidden" name="back_custom1" value="" />
+<input type="hidden" name="back_custom2" value="" />
+<input type="hidden" name="back_custom3" value="" />
+<input type="hidden" name="back_custom4" value="" />
+<input type="hidden" name="back_custom5" value="" />
+<input type="hidden" name="back_operID" value="" />
+</fieldset>
+</form>
+
+<form id="PostLink" method="post" action="ControllerServlet;jsessionid=00011ZscbQx0E5QkeJteT1kyV5j:-810UMK">
+<fieldset>
+<input type="hidden" name="command" value="" />
+<input type="hidden" name="custom1" value="" />
+<input type="hidden" name="custom2" value="" />
+<input type="hidden" name="custom3" value="" />
+<input type="hidden" name="custom4" value="" />
+<input type="hidden" name="custom5" value="" />
+<input type="hidden" name="operID" value="" />
+<input type="hidden" name="filterString" value="" />
+<input type="hidden" name="verificationGroupName" value="" />
+<input type="hidden" name="requiredList" value="" />
+<input type="hidden" name="removeCommand" value="" />
+<input type="hidden" name="back_command" value="" />
+<input type="hidden" name="back_custom1" value="" />
+<input type="hidden" name="back_custom2" value="" />
+<input type="hidden" name="back_custom3" value="" />
+<input type="hidden" name="back_custom4" value="" />
+<input type="hidden" name="back_custom5" value="" />
+<input type="hidden" name="back_operID" value="" />
+
+<input type="hidden" name="saveTemplate" value="" />
+<input type="hidden" name="paymentTemplateName" value="" />
+</fieldset>
+</form>
+<script type="text/javascript">
+	function goBack(){
+	  post("", "", "", "", "", "", "");
+	}
+top.document.title = 'Equa bank';
+
+
+
+
+</script>
+</div>
+
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+
+
+   
+
+
+
+
+
+
+<!-- documentBodyTag->start -->	<div id="header"> <div id="header-holder"><h1>
+<a target="_blank" title="Zpět na úvodní stránku" href='http://www.equabank.cz'>
+<img alt="Equa bank" src="./images/login-logo.png" style="padding-left:20px" /></a></h1>
+<table class="secure1Table"><tr><td>
+<div class="switchlang1">
+<a title="Switch to" href="void(0);" onclick="javascript: post('auth_changeLanguage', 'en');return false;">English</a>
+</div>
+</td></tr>
+<tr><td>
+<div class="secure1">
+<span class="gothic">Spojení je zabezpečeno<br/>šifrováním a certifikáty</span>
+</div>
+</td></tr></table>
+<div class="clr">
+</div>
+</div>
+</div>
+       <!-- main page content-->
+<div id="container">
+<div id="container-holder">
+<div class="clr"></div>
+<script type="text/javascript">
+//<![CDATA[
+$("#ENDINGSESSIONBODYID").dialog("destroy");
+$(function() {
+var win_width =$(window).width();
+var scrollToLeft=$(window).scrollLeft();
+var win_height =$(window).height();
+var scrollToBottom=$(window).scrollTop();
+var box_width=450;
+var box_height=350;
+$("#ENDINGSESSIONBODYID").css({left:(((win_width/2-box_width/2))+scrollToLeft)+'px',top:(((win_height/2-box_height/2))+scrollToBottom)+'px'});
+$("#ENDINGSESSIONBODYID").dialog({
+autoOpen: false,
+resizable: false,
+width: 450,
+height:350,
+modal: true,
+closeOnEscape: false, 
+draggable:false});
+});
+	$('#ENDINGSESSIONBODYID').live('dialogclose', function(event) {  setTimeout(function() { ContextHelp.backToBasic(); }, 50); 	});	//]]>
+</script>
+<div id="ENDINGSESSIONBODYID" title="Přihlásit se"><p id="validateTipsP" class="validateTips"></p>
+<div id="inner_ENDINGSESSIONBODYID" width="100%" border="0" align="center" style="display:none; visibility: hidden; height: 1px;">
+ <p class="modal-message" style="text-align: left">Pro opětovné přihlášení klikněte na tlačítko Pokračovat nebo znovu načtěte přihlašovací stránku internetového bankovnictví. </p>
+<div class="actions"><a id="endSessionBtn2" href='javascript:void(0)' onclick="javascript:$('#ENDINGSESSIONBODYID').dialog('close');document.location='index.jsp';" class="submit-btn" style="white-space: nowrap">Pokračovat</a>
+</div></div>
+</div><div class="popup_main" style="z-index: 999; width: 450px; height: 104px; top: 260px; left: 373px; cursor: pointer; "  id="CONFIRMATIONDIALOGID">Transakce není ukončená.</td></tr><tr><td>
+<p class="modal-message">Chcete se Odhlásit ze systému?</p>
+<div class="actions"><a id="confirmContinueBtn" class="button" href='javascript:void(0)' onclick="javascript:void(0);">Pokračovat v transakci</a><a id="confirmAbortBtn" class="button" href='javascript:void(0)' onclick="javascript:void(0);" style="white-space: nowrap">Přerušit transakci</a>  </div>
+</div>
+
+
+
+<style type="text/css">
+	#loginByMK { display: block;}
+</style>
+
+<style>
+.security-info {
+	margin: 20px 0 0 -20px;
+	padding: 16px 25px;
+	width: 323px;
+	font-size: 12px;
+	font-family: arial, sans-serif;
+	border: 1px solid #e8e8e8;
+	background: #efefef;
+	border-radius: 15px;
+}
+.security-info h3 {
+	margin: 0 0 9px;
+	padding: 0;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: arial, sans-serif;
+	color: black;
+}
+.security-info strong {
+	font-weight: bold;
+}
+.security-info p {
+	margin: 0 0 9px 0;
+	color: black;
+}
+.security-info .security-info__link {
+	margin-bottom: 0;
+}
+.security-info .security-info__link a {
+	color: #00b0f0;
+	text-decoration: underline;
+}
+.security-info .security-info__link a:hover {
+	text-decoration: none;
+}
+</style>
+
+	<div class="main"> 
+		<div class="inner-container clearfix">
+		    <div class="content clearfix"> 	
+			<h2>Vstup do internetového bankovnictví</h2>
+
+		
+
+	 
+		
+    
+     
+		    
+    <div class="selected_menu">
+			<span class="menu_label">
+			
+			Osobní</span>
+	</div>		
+	 <div class="selected_menu2">			
+	</div>				
+	<div class="selected_notmenu">
+			<a class="menu_label" target="_top" href="https://www.equabanking.cz/SME/">Firemní</a>
+	</div>		
+    
+	<div class="login-box1 clearfix">
+
+<form action="ControllerServlet;jsessionid=00011ZscbQx0E5QkeJteT1kyV5j:-810UMK" method="post" name='simpleForm' id='simpleForm' onsubmit='init()'><fieldset>
+<input type="hidden" name="command" value="auth_loginByPassword" />
+<input type="hidden" name="back_command" value="" />
+<input type="hidden" name="back_custom1" value="" />
+<input type="hidden" name="back_custom2" value="" />
+<input type="hidden" name="back_custom3" value="" />
+<input type="hidden" name="back_custom4" value="" />
+<input type="hidden" name="back_custom5" value="" />
+</fieldset>
+
+    <input type="hidden" name="checkInputs" value="false" />
+    <input type="hidden" name="typeOfLogin" value="mk" />
+    <input type="hidden" name="username" value="" />
+    <input type="hidden" name="password" value="" />
+    <input type="hidden" name="clientusername" value="" />
+    <input type="hidden" name="CIF" value="" />
+    <input type="hidden" name="GFOSessionID" value="" />
+    <input type="hidden" name="appIdent" value="" />    
+    <input type="hidden" name="gfoRole" value="" />    
+    <input type="hidden" name="langID" value="" />
+    <input type="hidden" name="actChannelID" value='19' />
+    <input type="hidden" name="actPartnerID" value="" />
+    <input type="hidden" name="actPersonID" value="" />            
+    <input type="hidden" name="suppModule" value="eTpkcs11" />
+	<input type="hidden" name="module" value="eTpkcs11" />	
+	<input type="hidden" name="keyStoreType"  value="eTpkcs11" />
+    <input type="hidden" name="protocol" value="pkcs11://" />
+    <input type="hidden" name="OTOKey" value='684100082' />
+	<input type="hidden" name="javaVM" />
+	<input type="hidden" name="CurrentTime" value="" />
+			
+	<div class="control-group">
+		<span class="login_labels">Přihlašovací číslo</label>
+		<input onkeypress="return submitenter(this,event)" type="text" name="loginByMK_username" id="loginByMK_username" size='35' tabindex='1' AUTOCOMPLETE="off" value=""  class="z-textbox"/>
+	</div>
+	<div class="control-group">
+		<span class="login_labels">Heslo</label>
+     	<input onkeypress="return submitenter(this,event)" type="password" name="loginByMK_password" id="loginByMK_password" size='35' tabindex='2' AUTOCOMPLETE="off" value=""  class="z-textbox"/>
+	</div>
+		
+		
+	 
+		
+ 	<div class="buttons-wrapper clearfix">
+		<div class="inner clearfix">
+			<span class="z-span">				
+				 <button id="loginButton" class="forwardButton" value="login" name="login" type="button" tabindex="3"  onclick="post_login_local('auth_loginByPassword');return false;">
+						<span class="logButtonLeft"></span>Přihlásit<span class="logButtonRight"></span>
+				</button>
+			</span>
+		</div>
+	</div>	
+	<div class="clr"></div>
+	
+</form>
+</div>
+
+
+
+<div class="clr"></div>
+
+<!-- <div class="news">
+</div></div> 
+			
+<div class="sidebar">		
+</div></div></div> -->
+
+	 
+  	<div class="security-info">
+		<h3>Upozornění na podvodné emaily</h3>
+		<p>Společnost Equa bank <strong>nikdy neposílá</strong> odkaz do internetového bankovnictví prostřednictvím e-mailu.</p>
+		<p>V případě obdržení takového e-mailu vás žádáme, abyste na něj nereagovali, případně jej smazali. Zabezpečené připojení je možné si ověřit zobrazením certifikátu.</p>
+		<p class="security-info__link"><a href="https://www.equabank.cz/pece-a-podpora/bezpecnostni-zasady/" target="_blank">Bezpečnostní zásady</a></p>
+	</div>
+		 
+
+	
+	 
+	 
+<div class="news">
+<!-- <body>
+	<div class="main">     
+     <h2 class="gothic">Novinky</h2>   
+	    <div class="news-wrapper">    
+		    <h5 class="date">1.&nbsp;7.&nbsp;2013</h5>   
+	        <h3>Halo halo</h3>                            
+	        <p><p>Testovaci zprava..</p></p>
+	    </div>
+	   <div class="news-wrapper">    
+		    <h5 class="date">1.&nbsp;7.&nbsp;2013</h5>   
+	        <h3>Halo halo</h3>                            
+	        <p><p>Testovaci zprava..</p></p>
+	    </div>
+	    <div class="news-wrapper">    
+		    <h5 class="date">1.&nbsp;7.&nbsp;2013</h5>   
+	        <h3>Halo halo</h3>                            
+	        <p><p>Testovaci zprava..</p></p>
+	    </div>
+     </div>
+  </body> -->
+</div></div>
+
+<div class="sidebar">
+<!--  <body>
+	<div class="notice info">     
+    	<h4 class="gothic">Upozorneni</h4>   
+	    <div class="news-wrapper">    
+		    <p><p>Testovaci novinka.</p></p>
+	    </div>	    
+     </div>
+</body>	 -->
+</div>
+<div class="loginBanners">
+</div></div></div>
+	
+		 
+<script type="text/javascript">
+//<![CDATA[
+
+var isNotSubmit = true;
+function post_login_local(command){	
+	if(isNotSubmit){
+		isNotSubmit = false;
+		//$('a[id=defBtnID]').addClass('submit-grey');	
+		//$('a[id=defBtnID]').bind('click', false);
+		
+	    document.forms["simpleForm"].username.value = document.getElementById('loginByMK_username').value;
+	    document.forms["simpleForm"].password.value = document.getElementById('loginByMK_password').value;
+	 
+    post_login(command);
+	}
+}
+	
+//]]>
+</script>
+
+
+
+
+
+</div>
+           <div class="clr"></div>
+</div>
+</div>
+<script type="text/javascript">
+addMovableElement("CONFIRMATIONDIALOGID"+RESET_Z);makeMovable(movableElements);showLoginPageEndingSessionWarning(1740,"Pokračovat");
+</script>
+<div class="footer">
+	<div style="width:100%;height:100%;" class="z-include">
+		<div class="footer-head">
+			<div class="inner-container">
+				<span class="logo">Equa bank</span>
+				<span class="text gothic">Více, než čekáte</span>
+			</div>
+		</div>
+	<div class="footer-body clearfix">
+		<div class="inner-container clearfix">
+			<div class="column first-column">
+				<h3>Potřebujete poradit?</h3>
+				<p>
+					<span class="z-label">Volejte denně kdykoliv od 8.00 do 21.00 hod. <strong>+420&nbsp;222&nbsp;010&nbsp;222</strong> nebo pište na <a href="mailto:klientske.centrum@equabank.cz">klientske.centrum@equabank.cz</a></span><br>
+				</p>
+					<p class="link">
+						<a target="_blank" href="http://www.equabank.cz/dulezite-dokumenty/">Dokumenty ke stažení</a>
+					</p>
+					<p class="link last">
+						<a  class="z-a" target="_blank" href="http://www.equabank.cz/caste-dotazy/">Časté dotazy</a>
+					</p>
+					<ul>
+						<li class="contactsLink"><a class="contactsItem" target="_blank" href="http://www.equabank.cz/kontakt/">Další kontakty</a></li>
+						<li class="contactsLink"><a class="contactsItem"target="_blank" href="https://www.equabank.cz/dulezite-dokumenty/">Podmínky používání</a></li>
+					</ul>
+					<p class="copyright">
+						<span>© Equa bank a.s. 2011 - 2016. Všechna práva vyhrazena.</span>
+					</p>
+			</div>
+				<div class="column second-column">
+					<h3>Seznam poboček</h3>
+					<div>
+					<p class="link">
+						<a target="_blank" href="http://www.equabank.cz/kontakt/adresy-pobocek/">Seznam poboček</a>
+					</p>
+					<p class="link last">
+						<a target="_blank" href="http://equabank.cz/firemni/kontakt/adresy-pobocek/">Kanceláře firemního bankovnictví</a>
+					</p>
+				</div>
+				</div>
+				<div class="column third-column">
+					<h3>Jste klientem Equa bank?</h3>
+					<p>Sledujte nás:</p>
+					<ul class="social clearfix">
+						<li class="facebook"><a class="z-a" target="_blank" href="http://www.facebook.com/equabank">Facebook</a></li>
+						<li class="twitter"><a class="z-a" target="_blank" href="https://twitter.com/equabankcz">Twitter</a></li>
+						<li class="google-plus"><a class="z-a" target="_blank" href="https://plus.google.com/+equabank/posts">Google+</a></li>
+						<li class="youtube"><a class="z-a" target="_blank" href="http://www.youtube.com/equabank">Youtube</a></li>
+						<li class="linked-in"><a class="z-a" target="_blank" href="http://www.linkedin.com/company/2260135">linkedIn</a></li>
+						<li class="rss"><a class="z-a" target="_blank" href="http://www.equabank.cz/rss/news/">RSS</a></li>
+					</ul>
+				</div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- TRACKING CODE START-->
+<!-- SiteCatalyst code version: H.26.1.
+Copyright 1996-2013 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="javascript/s_code_equa.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.server = window.location.hostname;
+s.prop3="cs";
+
+// For IBS
+s.channel="IBS RETAIL";
+s.pageName="IBS RETAIL - Login page";
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="https://equabank.d3.sc.omtrdc.net/b/ss/eb-web/1/H.26.1--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.26.1. -->
+
+<!-- TRACKING CODE END -->
+<!-- documentBodyTag-end -->
+
+
+
+<script type="text/javascript">
+function submitenter(myfield,e) {
+	var keycode;
+	if (window.event) { 
+		keycode = window.event.keyCode;
+	}
+	else if (e) {
+		keycode = e.which;
+	}
+	else {
+		return true;
+	}
+
+	if (keycode == 13) {
+   		post_login_local('auth_loginByPassword');
+   		return false;
+   	}
+	else {
+   		return true;
+	}
+}
+
+</script>
+
+
+
+
+
+<div class="noprint"> 
+</div>
+ <div class="applicationVersion">1.92.0.0_HF2</div>
+</body>
+</html>
+
+
+
+
