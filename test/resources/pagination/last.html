@@ -1,0 +1,1071 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
+	<meta http-equiv="imagetoolbar" content="no" />
+<title>
+
+
+Equa bank
+</title>
+
+<script type="text/javascript">
+	var controllerServletURLjs = 'ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK';
+</script>
+<script src="script/script.js?2" type="text/javascript"></script>
+
+<script type="text/javascript">
+	window.onload = init;
+	function init() {
+		var e = e || window.event;
+
+	  if (document.captureEvents) {
+	    document.captureEvents(Event.MOUSEMOVE);
+	  }
+	  document.onmousemove = getCursorXY;
+	}
+	
+	//disable back button in web browser
+	//for IE - page expires when cache is disabled, otherwise forward to last page
+	function noBack() { window.history.forward()}
+	noBack();
+	//solution for Mozilla based browsers with bfcache - disable bfcache, forward to last page 
+	//window.onload=noBack;
+	window.onpageshow=function(evt){if(evt.persisted)noBack()} 
+	window.onunload=function(){void(0)}
+	
+	var lang = "cs";
+  
+
+	var categorizedHelpLink = 'https://www.equabanking.cz/equabank-ibs-help/modalHelp.php';
+</script>
+
+
+<span id="langForIBS" style="display: none">cs</span>
+
+<!--********************************************************************************-->
+
+<script src="script/popup.js?1" type="text/javascript"></script>
+<script type="text/javascript">
+function callKeyboardHelp()
+{
+	help("html/help09.html#virtkey");
+}
+</script>
+<!--********************************************************************************-->
+
+  
+    <link rel="stylesheet" href="style/print.css?2" type="text/css" media="print" />
+    <link rel="stylesheet" href="style/popup.css?2" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style/jquery_popup.css?2" type="text/css" media="screen" />
+
+	<link href="css/layout.css?3" rel="stylesheet" type="text/css" />
+	<link href="css/pages.css?2" rel="stylesheet" type="text/css" />	
+	<link href="css/jquery.selectbox.css?2" rel="stylesheet" type="text/css" />	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/ie7.css?2" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="css/ie.css?2" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE]>
+	<link rel="stylesheet" href="css/ie-all.css?2" type="text/css" media="screen" />
+	<![endif]-->
+
+	<link href="css/jquery.datepicker.css?2" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/bscCustom.css?2" type="text/css" media="screen" />
+
+	<script src="javascript/jquery.js?1" type="text/javascript"></script>
+
+	<script src="javascript/date.js?1" type="text/javascript"></script>
+
+	<script src="javascript/jquery.datepicker.js?1" type="text/javascript"></script>	
+
+	<script src="javascript/datepicker_text_cs.js?1" type="text/javascript"></script>
+
+	
+	<script src="javascript/jquery.selectbox.js?1" type="text/javascript"></script>
+	<script src="javascript/rangecalendar.js?1" type="text/javascript"></script>
+	<script src="javascript/main.js?5" type="text/javascript"></script>
+	<script src="javascript/authorization.js?1" type="text/javascript"></script>
+	<script src="javascript/jquery-ui.js?1" type="text/javascript"></script>
+	<script src="javascript/encoder.js?1" type="text/javascript"></script>
+	<script src="javascript/pwdStrength.js?1" type="text/javascript"></script>
+	<script src="javascript/focusFirstErrorField.js?1" type="text/javascript"></script>
+	<script src="javascript/jquery.scripts.js?2" type="text/javascript"></script>
+	<script src="javascript/jquery.caret.1.02.js?1" type="text/javascript"></script>
+  	<script src="javascript/textarea.js?2" type="text/javascript"></script>
+  
+		
+	<script type="text/javascript" src="javascript/jquery.ui.autocomplete.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.core.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.position.js?1"></script>
+	<script type="text/javascript" src="javascript/jquery.ui.widget.js?1"></script>
+	
+	<script type="text/javascript" src="javascript/autoNumeric-1.7.4.js?1"></script> 
+	<script type="text/javascript" src="javascript/jquery.inputmask.js?1"></script>
+    <script type="text/javascript" src="javascript/jquery.inputmask.extentions.js?1"></script>    
+    
+    <script type="text/javascript" src="javascript/setFrameHeight.js?1"></script>
+	
+	<link href="css/jquery.ui.autocomplete.css?2" rel="stylesheet" type="text/css" />
+	<style>.loader {background-color: white; position: relative; z-index:3; left:0; top:0}</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="movements" onload="noBack();" class="lang-cs">
+
+<script src="script/hintpopup.js?1" type="text/javascript"></script>
+<script src="script/wz_tooltip.js?1" type="text/javascript"></script>
+<script src="script/tip_balloon.js?1" type="text/javascript"></script>
+<script src="script/wz_dragdrop.js?1" type="text/javascript"></script>
+<script src="script/WebRA.js?1" type="text/javascript"></script>
+
+<div style="position:absolute; visibility:hidden;">
+<form id="SortLink" method="post" action="ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK">
+<fieldset>
+<input type="hidden" name="command" value="" />
+<input type="hidden" name="custom1" value="" />
+<input type="hidden" name="custom2" value="" />
+<input type="hidden" name="custom3" value="" />
+<input type="hidden" name="custom4" value="2" />
+<input type="hidden" name="custom5" value="" />
+
+<input type="hidden" name="sorting" value="" />
+<input type="hidden" name="operID" value="" />
+<input type="hidden" name="back_command" value="" />
+<input type="hidden" name="back_custom1" value="" />
+<input type="hidden" name="back_custom2" value="" />
+<input type="hidden" name="back_custom3" value="" />
+<input type="hidden" name="back_custom4" value="" />
+<input type="hidden" name="back_custom5" value="" />
+<input type="hidden" name="back_operID" value="" />
+</fieldset>
+</form>
+
+<form id="PostLink" method="post" action="ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK">
+<fieldset>
+<input type="hidden" name="command" value="" />
+<input type="hidden" name="custom1" value="" />
+<input type="hidden" name="custom2" value="" />
+<input type="hidden" name="custom3" value="" />
+<input type="hidden" name="custom4" value="" />
+<input type="hidden" name="custom5" value="" />
+<input type="hidden" name="operID" value="" />
+<input type="hidden" name="filterString" value="" />
+<input type="hidden" name="verificationGroupName" value="" />
+<input type="hidden" name="requiredList" value="" />
+<input type="hidden" name="removeCommand" value="" />
+<input type="hidden" name="back_command" value="" />
+<input type="hidden" name="back_custom1" value="" />
+<input type="hidden" name="back_custom2" value="" />
+<input type="hidden" name="back_custom3" value="" />
+<input type="hidden" name="back_custom4" value="" />
+<input type="hidden" name="back_custom5" value="" />
+<input type="hidden" name="back_operID" value="" />
+
+<input type="hidden" name="saveTemplate" value="" />
+<input type="hidden" name="paymentTemplateName" value="" />
+</fieldset>
+</form>
+<script type="text/javascript">
+	function goBack(){
+	  post("", "", "", "", "", "", "");
+	}
+top.document.title = 'Equa bank';
+
+
+
+
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	function bankLinkClick(elem){
+	    if ( $("input[name=creditBankCode]").autocomplete( "widget" ).is( ":visible" ) ) {
+	        $("input[name=creditBankCode]").autocomplete( "close" );
+	        return;
+	    }
+	
+	    $("input[name=creditBankCode]").val(""); 
+	    $("input[name=creditBankCode]").autocomplete("search", "");    
+	}
+
+	$(document).ready(function(){
+		$(function() {
+			$('input[name=creditBankCode]').after(" <img class='bank-code' onClick='javascript: bankLinkClick(this); return false;' src='images/ico-bankcode.gif' style='cursor:pointer' alt='' border='0' title='Kód banky'  />");		
+		});
+	});
+    
+	$(function() {
+ 		$("input[name=creditBankCode]").autocomplete({
+			source: function (req, add) {
+				$.ajax({
+					   type: "POST",
+					   dataType: "html",
+					   url: "ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK",
+					   data: "command=bankList302_bankList&bankCode="+$("input[name=creditBankCode]").val(),
+					   success: function(msg){
+						   var myObject = eval('('+msg+')');
+						   var data = [];
+						   $.each(myObject, function(i, item) {
+							   data.push(item);
+						   });
+						   add(data);
+					   }
+				});
+			},
+			minLength: 0,
+			focus: function( event, ui ) {
+				return false;
+			},			
+			select: function(event, ui) {
+				$( "input[name=creditBankCode]" ).val(ui.item.code);
+				return false;
+			}
+		})
+		.data( "autocomplete" )._renderItem = function( ul, item ) {
+			return $( "<li align='left'></li>" )
+				.data( "item.autocomplete", item )
+				.append( "<a>" + item.code + " - " + item.label + "</a>" )
+				.appendTo( ul );
+		};
+	});	
+
+   $(document).click(function(e) {
+       if ( $("input[name=creditBankCode]").autocomplete( "widget" ).is( ":visible" ) ) {
+           $("input[name=creditBankCode]").autocomplete( "close" );
+           return;
+       }
+   });  
+   
+
+	function prepareData() {
+
+		var d = new Date();
+		d.setTime(document.getElementById("period-from").value);
+		document.getElementById("startDateRef").value = d.asString("dd.mm.yyyy");
+		d.setTime(document.getElementById("period-to").value);
+		document.getElementById("endDateRef").value = d.asString("dd.mm.yyyy");
+		
+		$('input[name=creditAccountNumberFull]').val($('input[name=creditAccountPrefix]').val() + "%" + $('input[name=creditAccountNumber]').val());
+	
+		postFilter();	
+	}
+
+	function changeCategoryType(obj) {
+		setTimeout(function() {
+			changeCategoryType2(obj); 
+		}, 100);
+	}
+	function changeCategoryType2(obj){
+		if(obj){
+			var input =	document.getElementById("categoryName");
+			var combo = document.getElementById("categoryID");
+			var errorsP = document.getElementById("validateTipsP");
+			if(obj.value == 1) {
+				input.disabled=true;
+				input.value='';
+				combo.disabled=false;
+				$("input[name=categoryType]").filter("[value=2]").removeAttr("checked");
+				$("input[name=categoryType]").filter("[value=1]").attr("checked","checked");
+				$("input[name=categoryType]").filter("[value=1]").attr("checked",true);
+			} else if(obj.value == 2) {
+				input.disabled=false;
+				input.value='';
+				combo.disabled=true;
+				$("input[name=categoryType]").filter("[value=1]").removeAttr("checked");
+				$("input[name=categoryType]").filter("[value=2]").attr("checked","checked");
+				$("input[name=categoryType]").filter("[value=2]").attr("checked",true);
+			}	
+				
+			
+			errorsP.innerHTML = '';
+			errorsP.className = '';
+		}
+	}
+	$(document).ready(function() {
+		$('input[name=back_custom2]').val('');
+
+		
+	});
+
+	
+
+	
+	$(function() {
+		$('#modalSubmit')
+			.click(function() {
+			if(!checkInput()) {
+				return;
+			}
+				
+			var datas = createRequestData();
+			$.ajax({
+				   type: "POST",
+				   url: "ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK",
+				   contentType: "multipart/form-data;charset=UTF8;boundary=" + boundary +"",
+ 			       processData: false,
+				   data: datas,
+				   success: function(msg) {
+					if (msg == '') {
+					   updateTips('Omlouváme se, Váš požadavek nemohl být zpracován. Zkuste prosím později.');
+					} else if(msg.match('^error')=='error') {
+					    var ar = msg.split(';');
+					    if (ar.length > 1) {
+						   updateTips(ar[1]);
+					    } else {
+						   updateTips('Omlouváme se, Váš požadavek nemohl být zpracován. Zkuste prosím později.');
+					    }
+					} else if(msg != 'error') {
+						$('#dialog-form').dialog('close');
+					    var ar = msg.split(';');
+						var ids = $("#categoryText_hidden").val();
+						$("#"+ids).html('<strong>'+ar[1]+'</strong>');
+						// command
+						try {
+							var movId = $("#acmId_hidden").val();
+							var command = 'javascript:post(\'mov_detail\', \''+movId+'\', \'\', \''+ar[1]+'\');void(0);';
+							$("#"+ids).parent().children().first().attr("href", command);
+						} catch (e) {
+							// nothing
+						}
+						var $kids = $("#categoryID").children();
+						var contains = false;
+						for(var i = 0; i < $kids.length; i ++) {
+							if(trim($($kids[i]).val()) == trim(ar[0])) {
+								contains = true;
+							}
+						}
+						if(!contains) {
+							$('#categoryID').append($('<option></option>').val(ar[0]).html(ar[1]));
+						}
+				    }
+				 }
+			});
+		});
+		
+		function createRequestData() {
+			var postData="";
+			postData += createPostData("catId",$("#categoryID").val());
+			postData += createPostData("categoryName",$("#categoryName").val());
+			postData += createPostData("acmId",$("#acmId_hidden").val());
+			postData += createPostData("command","mov_saveTransactionCategory");
+			postData += createEndPostData();
+			return postData;
+		}
+
+		var tips = $(".validateTips");
+		
+		function checkInput() {
+			var cb = $("input:checked[name=categoryType]");
+			var combo = $("#categoryID");
+			var category = $("#categoryText_hidden");
+			if (cb != null && cb.val() == "1") {
+				if(combo.children().length > 0){
+					return true;
+				} else {
+					updateTips('Nezvolili jste kategorii.');
+					return false;
+				}
+			} else {
+				var input = $("#categoryName");
+				if(!checkLength(input,"category name",1,20)) {
+					return false;
+				}
+				var $kids = combo.children();
+				for(var i = 0; i < $kids.length; i ++) {
+					var iVal = trim(input.val());
+					var cbIVal = trim($($kids[i]).text());
+					if(cbIVal == iVal) {
+						updateTips('Kategorie se stejným názvem již existuje.');
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+		function checkLength(o,n,min,max) {
+			if ( o.val().length > max || o.val().length < min ) {
+				o.addClass('ui-state-error');
+				updateTips('Název kategorie musí mít nejméně 1 a nejvýše 20 znaků. ');
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		function updateTips(t) {
+			tips
+				.text(t)
+				.addClass('sys-message error-message');
+		}
+
+		function clearTips(t) {
+			tips.removeClass('sys-message error-message', 1500);
+		}
+	});
+	$(function() {
+		$('#modalClose')
+			.click(function() {
+			$('#dialog-form').dialog('close');
+		});
+	});
+
+	function setAcmtId(acmId, text) {
+		var elem = document.getElementById("acmId_hidden");
+		if(elem != null) {
+			elem.value = acmId;
+		}
+		var elemT = document.getElementById("categoryText_hidden");
+		if(elemT != null) {
+			elemT.value = text;
+		}
+	}
+	function resetModalDialog() {
+		document.getElementById('selectExistingCategory').value=1;
+		document.getElementById('selectExistingCategory').checked=true;
+		document.getElementById('categoryName').value='';
+		$(".validateTips").text('').removeClass('sys-message error-message', 1500);
+		changeCategoryType(document.getElementById('selectExistingCategory'));
+	}
+	
+</script>
+
+<style>
+.filter-div {
+	padding: 14px 15px 14px 30px;
+	border-top: 1px solid #CCCCCC;
+ 	border-bottom: 1px solid #CCCCCC;
+ 	background: #f2f2f2;
+}
+.filter-table {
+	border: 0px;
+	padding: 0px;
+}
+.filter-middle {
+	padding: 0px;
+ 	display: none;
+}
+.filter-bottom {
+ 	padding: 0px;
+}
+
+.dp-choose-date {   
+    display: none;   
+}
+
+</style>
+<!-- documentBodyTag->start --><div id="header"><div id="header-holder"><h1>
+<a title="Zpět na úvodní stránku" href='javascript: void(0);' onclick='javascript: post("home_homePage");return false;'>
+<img height="24" alt="Equa bank" src="./images/logo.gif" width="115" /></a></h1>
+<div id="loged-box">
+<h4 class="hidden">
+Přihlášen jako</h4>
+<p>
+Petr&nbsp;Novak
+<a href="void(0);" onclick="javascript: post('auth_logout');return false;">Odhlásit</a>
+</p>
+</div>
+<div class="clr">
+</div>
+<h4 class="hidden">Hlavn� nab�dka</h4>
+<ul id="menu">
+<li class="review selected">
+<a id="menu1" title="Přehled"   href='javascript: void(0);' onclick='javascript: post("home_homePage");; return false;'>
+<span class="description">
+Přehled
+</span></a></li>
+<li class="payment">
+<a id="menu2" title="Jednorázové platby"   href='javascript: void(0);' onclick='javascript: post("DPONew_clearForm");; return false;'>
+<span class="description">
+Jednorázové platby
+</span></a></li>
+<li class="recurring-payment">
+<a id="menu3" title="Opakované platby"   href='javascript: void(0);' onclick='javascript: post("SDPOProductList_listRefresh", "0");; return false;'>
+<span class="description">
+Opakované platby
+</span></a></li>
+<li class="waiting-room">
+<a id="menu18" title="Čekárna plateb"   href='javascript: void(0);' onclick='javascript: post("futurePaymentList_listRefresh", "0");; return false;'>
+<span class="description">
+Čekárna plateb
+</span></a></li>
+<li class="mortage">
+<a id="menu17" title="Hypotéka"   href='javascript: void(0);' onclick='javascript: post("extapp_display","9");; return false;'>
+<span class="description">
+Hypotéka
+</span></a></li>
+<li class="loan">
+<a id="menu19" title="Půjčky a kontokorent"   href='javascript: void(0);' onclick='javascript: post("extapp_display","5");; return false;'>
+<span class="new-messages alert green-messages offersCount">1</span><span class="description">
+Půjčky a kontokorent
+</span></a></li>
+<li class="savings">
+<a id="menu6" title="Spoření"   href='javascript: void(0);' onclick='javascript: post("balances_list","","","","2");; return false;'>
+<span class="description">
+Spoření
+</span></a></li>
+<li class="cards">
+<a id="menu7" title="Karty"   href='javascript: void(0);' onclick='javascript: post("card_cards", "", "true");; return false;'>
+<span class="description">
+Karty
+</span></a></li>
+<li class="insurance">
+<a id="menu20" title="Pojištění"   href='javascript: void(0);' onclick='javascript: post("extapp_display","7");; return false;'>
+<span class="description">
+Pojištění
+</span></a></li>
+</ul>
+<ul id="menu-extended">
+<li class="notifications">
+<a id="menu11" title="Upozornění"   href='javascript: void(0);' onclick='javascript: post("messageOrderList_listRefresh");; return false;'>
+<span class="description">
+Upozornění
+</span></a></li>
+<li class="messages">
+<a id="menu10" title="Zprávy"   href='javascript: void(0);' onclick='javascript: post("bankMessages_list");; return false;'>
+<span class="new-messages green-messages">4</span><span class="description">
+Zprávy
+</span></a></li>
+<li class="settings">
+<a id="menu9" title="Nastavení"   href='javascript: void(0);' onclick='javascript: post("client_clearForm");; return false;'>
+<span class="description">
+Nastavení
+</span></a></li>
+</ul>
+<div class="clr">
+</div>
+</div>
+</div>
+<div id="sub-header">
+<div id="sub-header-holder">
+<ul>
+<li >
+<div>
+                     <a id="menu1.1" href='javascript: void(0);' onclick='javascript: post("home_homePage"); return false;' title="Souhrn" >
+Souhrn</a>
+</div></li>
+<li  class="selected">
+<div>
+                     <a id="menu1.2" href='javascript: void(0);' onclick='javascript: post("mov_filterPage","0"); return false;' title="Transakční historie" >
+Transakční historie</a>
+</div></li>
+<li >
+<div>
+                     <a id="menu1.4" href='javascript: void(0);' onclick='javascript: post("estatement_list","0"); return false;' title="Výpisy z účtu" >
+Výpisy z účtu</a>
+</div></li>
+<li >
+<div>
+                     <a id="menu1.5" href='javascript: void(0);' onclick='javascript: post("freeformList_list", "1","1","true"); return false;' title="Žádosti/Nabídky" >
+Žádosti/Nabídky</a>
+</div></li>
+<li >
+<div>
+                     <a id="menu1.6" href='javascript: void(0);' onclick='javascript: post("failedPaymentList_listRefresh", "0"); return false;' title="Nezrealizované platby" >
+Nezrealizované platby</a>
+</div></li>
+<li >
+<div>
+                     <a id="menu1.7" href='javascript: void(0);' onclick='javascript: post("hold_listRefresh", "0"); return false;' title="Blokace" >
+Blokace</a>
+</div></li>
+</ul>
+<div class="clr">
+</div>
+</div>
+</div>
+       <!-- main page content-->
+<div id="container">
+<div id="container-holder">
+<div id="content">
+<p class="help-activation">
+<a id="deactivate" class="active" href="#" title="Nápověda"><span>Nápověda</span></a>
+</p>
+<script type="text/javascript">
+//<![CDATA[
+$("#ENDINGSESSIONBODYID").dialog("destroy");
+$(function() {
+var win_width =$(window).width();
+var scrollToLeft=$(window).scrollLeft();
+var win_height =$(window).height();
+var scrollToBottom=$(window).scrollTop();
+var box_width=450;
+var box_height=350;
+$("#ENDINGSESSIONBODYID").css({left:(((win_width/2-box_width/2))+scrollToLeft)+'px',top:(((win_height/2-box_height/2))+scrollToBottom)+'px'});
+$("#ENDINGSESSIONBODYID").dialog({
+autoOpen: false,
+resizable: false,
+width: 450,
+height:350,
+modal: true,
+closeOnEscape: false, 
+draggable:false});
+});
+	$('#ENDINGSESSIONBODYID').live('dialogclose', function(event) {  setTimeout(function() { ContextHelp.backToBasic(); }, 50); 	});	//]]>
+</script>
+<div id="ENDINGSESSIONBODYID" title="Odhlásit se"><p id="validateTipsP" class="validateTips"></p>
+<div id="inner_ENDINGSESSIONBODYID" width="100%" border="0" align="center" style="display:none; visibility: hidden; height: 1px;">
+<p class="modal-message" style="text-align: left"><span id='time'>&nbsp;</span> Pokud si odhlášení nepřejete, stiskněte tlačítko „Pokračovat“.</p>
+<div class="actions"><a id="endSessionBtn" class="btn">&nbsp;</a>
+<a id="endSessionBtn2" href='javascript:void(0)' onclick="javascript:$('#ENDINGSESSIONBODYID').dialog('close');document.location='index.jsp';" class="submit-btn" style="white-space: nowrap">Přejit na přihlašovací stranu</a>
+</div></div>
+</div><div class="popup_main" style="z-index: 999; width: 450px; height: 104px; top: 260px; left: 373px; cursor: pointer; "  id="CONFIRMATIONDIALOGID">Transakce není ukončená.</td></tr><tr><td>
+<p class="modal-message">Chcete se Odhlásit ze systému?</p>
+<div class="actions"><a id="confirmContinueBtn" class="button" href='javascript:void(0)' onclick="javascript:void(0);">Pokračovat v transakci</a><a id="confirmAbortBtn" class="button" href='javascript:void(0)' onclick="javascript:void(0);" style="white-space: nowrap">Přerušit transakci</a>  </div>
+</div>
+
+				
+
+<span id="customEndDate" style="display: none">29.01.2017</span>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$("#dialog-form").dialog("destroy");
+$(function() {
+var win_width =$(window).width();
+var scrollToLeft=$(window).scrollLeft();
+var win_height =$(window).height();
+var scrollToBottom=$(window).scrollTop();
+var box_width=350;
+var box_height=350;
+$("#dialog-form").css({left:(((win_width/2-box_width/2))+scrollToLeft)+'px',top:(((win_height/2-box_height/2))+scrollToBottom)+'px'});
+$("#dialog-form").dialog({
+autoOpen: false,
+resizable: false,
+width: 350,
+height:350,
+modal: true,
+closeOnEscape: true, 
+draggable:false});
+});
+	$('#dialog-form').live('dialogclose', function(event) {  setTimeout(function() { ContextHelp.backToBasic(); }, 50); 	});	$(function() {
+$('a[id^=addCat]')
+.click(function() {
+resetModalDialog();
+$('#dialog-form').dialog('open');
+$('#dialog-form').find('#errors').remove();function setFocus() {
+var frmElem = $('#dialog-form');
+if ($(frmElem).is(':visible')) { var firstInputElem = $(frmElem).find('input:visible:enabled:first');
+if (firstInputElem != null) { 
+firstInputElem.focus();
+ }
+ }
+ }
+setFocus();var frmElem = $('#dialog-form'); 
+if ($(frmElem).is(':visible')) { 
+var  inpText = $(frmElem).find('input:visible:enabled:first'); 
+if (inpText != null) { 
+$(inpText).keypress(function(e) { 
+var keyCode= (e.keyCode ? e.keyCode : e.which); 
+if (keyCode == 13) { 
+var subBtn = $('#dialog-form').find('a.submit-btn'); 
+$(subBtn).click(); return false; 
+ }  }); }  } });
+});
+//]]>
+</script>
+<div id="dialog-form" title="Zvolte kategorii"><p id="validateTipsP" class="validateTips"></p>
+
+	<form  id="dialogForm" name="dialogForm" method="post" action="ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK" id='dialogForm'><fieldset><input type="hidden" name="command" value="mov_saveTransactionCategory" /><input type="hidden" name="verificationGroupName" value="null" /></fieldset>
+		<input id="acmId_hidden" type="hidden" name="acmId" value=""/>
+		<input id="categoryText_hidden" type="hidden" name="catIdText" value=""/>
+   		<!-- === FORM GROUP -->
+<table class="form">
+
+    		<tr>
+ <th>
+<input type='radio' id = 'selectExistingCategory' name='categoryType' value='1' tabindex='1'  onclick='javascript:changeCategoryType(this);' checked="checked" />Vybrat</th>
+ <td>
+
+			</th>
+ <td>
+<!-- unused hint: _hint --><select name='catId' id='categoryID'  tabindex='2' onchange='javascript: void(0);'><option value='96995'>Bydlení</option><option value='96994'>Doprava</option><option value='97014'>Jídlo</option><option value='96996'>Kultura</option><option value='14891'>Moje kategorie</option><option value='96974'>Telefon</option></select></td>
+ </tr>
+
+    		<tr>
+ <th>
+<input type='radio' id = 'typeNewCategory' name='categoryType' value='2' tabindex='3'  onclick='javascript:changeCategoryType(this);' />Nová</th>
+ <td>
+
+			</th>
+ <td>
+<!-- unused hint: _hint --><input class="text-field" type='text' name='categoryName' id='categoryName'  value='' size='15' tabindex='4'  maxlength='20' /></td>
+ </tr>
+
+   		</table><!-- ** FORM GROUP -->
+
+
+	    <div  class="form-actions" >
+	        
+<a id="modalSubmit" href='javascript:void(0);' onclick='javascript:void(0);return false;'  tabindex="5"  class="submit-btn" title="Uložit">
+   Uložit
+</a>
+
+	        
+<a id="modalClose" href='javascript:void(0);' onclick='javascript:void(0);return false;'  tabindex="6"  class="btn" title="Zavřít">
+   Zavřít
+</a>
+
+	    </div>
+   	</form>
+</div>
+
+
+	
+	<!-- filter -->
+	<h2>Transakční historie</h2>
+<form name="mainFrm" method="post" action="ControllerServlet;jsessionid=0001t4UU-ND4YzRjF0fqdxMI91M:-810UMK" onsubmit='postFilter()' id='mainFrm'><fieldset><input type="hidden" name="command" value="mov_filterVerify" /><input type="hidden" name="verificationGroupName" value="transactionHistoryFilter" /></fieldset>
+	    <INPUT type='hidden' name='useGDMVerification' value="false"/>
+	    <div class="filter-div">
+   		<!-- === FORM GROUP -->
+<table class="filter-table filter-top">
+
+			<p><label ></label><!-- unused hint: transactionsFilterStatus_hint --><input type='hidden' name='transactionsFilterStatus' value='' />
+			
+			<input type="hidden" name="accountNumber" value="0" />
+			<!-- hold menu position -->			
+			<input type="hidden" name="custom2" value=""/>
+			<!-- card id -->			
+			<input type="hidden" name="custom3" value=""/>
+   	<tr class="filter-head">
+			<td colspan="2" class="double">
+				<label >Z účtu&nbsp;</label><span class="wrapspan"><span class="helper"><span class="helper-content">Vyberte účet a zobrazí se veškeré platby, které se k němu vztahují.</span><span class="pecker"></span></span><!-- used hint: accountNumber_hint --><span class='account-choice'><select name='accountID' tabindex='9' ><option value='' selected="selected">Všechny účty</option><option value='217217' >1021381351 (CZK) - Běžný účet</option><option value='222345' >1021381407 (CZK) - Spořící účet EXTRA</option></select></span></span>
+			</td>
+			<td colspan="2" class="double">
+				<div id="time-filter" class="filter-right-col">
+					<label  id="time-filter-label">Období&nbsp;</label><span class="wrapspan"><span class="helper"><span class="helper-content">Vyberte období, za které chcete platby vyhledat.</span><span class="pecker"></span></span><!-- used hint: movFilter_period_hint --><!-- calendar --><span id="time-filter-text">od&nbsp;<span id="time-filter-text-from"></span>&nbsp;do&nbsp;<span id="time-filter-text-to"></span></span><div id="time-filter-container"><div id="time-filter-content-top"><div id="time-filter-content-bottom"><div id="time-filter-content"><div class="cols"><div class="col"><input id="time-filter-7days" name="period" type="radio" value="7"  /><label for="time-filter-7days">posledních 7 dnů</label><br /><input id="time-filter-14days" name="period" type="radio" value="14"  /><label for="time-filter-14days">posledních 14 dnů</label><br /><input id="time-filter-30days" name="period" type="radio" value="30" checked="checked" /><label for="time-filter-30days">posledních 30 dnů</label><br /></div><div class="col"><input id="time-filter-month" name="period" type="radio" value="month"  /><label for="time-filter-month">poslední kalendářní měsíc</label><br /><input id="time-filter-year" name="period" type="radio" value="year"  /><label for="time-filter-year">poslední kalendářní rok</label><br /></div><div class="clr"></div><div class="col" style="width: 55%;"><input id="time-filter-radio-from" name="period" type="radio" value="user"  /><label for="time-filter-radio-from">dle data od</label><input id="time-filter-input-from" value="" maxlength="12" class="date"/><br/></div><div class="col"  style="width: 40%;"><span id="time-filter-label-to">do</span><input id="time-filter-input-to" value="" maxlength="12" class="date"/></div><div class="clr"></div><div id="time-filter-from"></div><div id="time-filter-to"></div><div class="clr"></div><span id="time-filter-button">Vybrat období (<span id="time-filter-chosen-from"></span> - <span id="time-filter-chosen-to"></span>)</span></div></div></div><!--[if lte IE 6.5]><iframe></iframe><![endif]-->
+</div></div><input type="hidden" id="startDateRef" name="startDateRef" value="" /><input type="hidden" id="endDateRef" name="endDateRef" value="" /><input id="period-from" type="hidden" value=""/><input id="period-to" type="hidden" value=""/><!-- calendar END --></span>
+				</div>
+			</td>
+		</tr>
+		</table><!-- ** FORM GROUP -->
+
+		<!-- === FORM GROUP -->
+<table class="filter-table filter-middle">
+
+		<tr class="minor">
+			<td>
+				<label >Částka od&nbsp;</label><br /><span class="wrapspan"><span class="helper"><span class="helper-content">Zadejte minimální výši částky, kterou chcete vyhledat.</span><span class="pecker"></span></span><!-- used hint: fromAmount_hint --><input class="textfield helper" type='text' name='fromAmount' id='amount-from'  value='' size='15' tabindex='11'  maxlength='15' /></span>
+			</td>
+			<td>
+	    	<label >Částka do&nbsp;</label><br /><span class="wrapspan"><span class="helper"><span class="helper-content">Zadejte maximální výši částky, kterou chcete vyhledat.</span><span class="pecker"></span></span><!-- used hint: toAmount_hint --><input class="textfield helper" type='text' name='toAmount' id='amount-to'  value='' size='15' tabindex='12'  maxlength='15' /></span>
+	    </td>
+	    <td colspan="2" class="double">
+	    		<label >Číslo účtu příjemce&nbsp;</label><br /><!-- unused hint: creditAccountNumber_hint --><input type="hidden" name="creditAccountNumberFull" value=""><input type="text" class="account-antenumber" name="creditAccountPrefix" value="" maxlength="6" tabindex='13'/> - <input type="text" class="account-number" name="creditAccountNumber" value="" maxlength="10" tabindex='13'/> / <input type="text" class="bank-code" name="creditBankCode" value="" maxlength="4" tabindex='13'/>
+       </td>
+	  </tr>
+	  <tr class="minor">
+	  	<td colspan="2" class="double">
+       		<label >Variabilní symbol&nbsp;</label><br /><span class="wrapspan"><span class="helper"><span class="helper-content">Zadejte variabilní symbol. Zobrazí se Vám platby, které tento variabilní symbol obsahují.</span><span class="pecker"></span></span><!-- used hint: variableSymbol_hint --><input class="textfield" type='text' name='variableSymbol' id='variableSymbol'  value='' size='15' tabindex='14'  maxlength='10' /></span>
+      </td>
+      <td>
+	    	<label >Typ platby&nbsp;</label><br /><span class="wrapspan"><span class="helper"><span class="helper-content">Vyberte typ transakce, kterou chcete zobrazit.</span><span class="pecker"></span></span><!-- used hint: transactionType_hint --><select name='transactionType' class='pseudo-selectbox'  tabindex='15' onchange='javascript: void(0);'><option value='5'>Jiné typy transakcí</option><option value='3'>Karetní transakce</option><option value='2'>Odchozí platební převody & Poplatky a úroky</option><option value='1'>Příchozí platební převody & Připsané úroky</option><option value='4'>Úroky a poplatky</option><option value='6' selected="selected">Všechny</option></select></span>
+      </td>
+      <td>      	
+	    	<label >Kategorie&nbsp;</label><br /><span class="wrapspan"><span class="helper"><span class="helper-content">Vyberte kategorii plateb, kterou chcete zobrazit.</span><span class="pecker"></span></span><!-- used hint: kategorie_hint --><select name='kategorie' class='pseudo-selectbox' id='category'  tabindex='16' onchange='javascript: void(0);'><option value=''>Vyberte</option><option value='96995'>Bydlení</option><option value='96994'>Doprava</option><option value='97014'>Jídlo</option><option value='96996'>Kultura</option><option value='14891'>Moje kategorie</option><option value='96974'>Telefon</option></select></span>
+      </td>
+	  </tr>
+		</table><!-- ** FORM GROUP -->
+
+		<!-- === FORM GROUP -->
+<table class="filter-table filter-bottom">
+
+    <tr class="final-line">
+			<td class="double" colspan="2">
+				<a id="expand" href="#">Rozšířené vyhledávání</a>
+			</td>
+			<td class="submit double" colspan="2">
+				
+<a id="clearID" href='javascript:void(0);' onclick='javascript:post("mov_clearFilter","0"); return false;'  tabindex="17"  class="erase-btn" title="Vymazat všechny zadané parametry.">
+   Vyčistit
+</a>
+
+        
+<a id="defBtnID" href='javascript:void(0);' onclick='javascript:prepareData(); mainFrm.submit(); return false;'  tabindex="18"  class="filter-btn" title="Vyhledat podle zadaných parametrů.">
+   Potvrdit
+</a>
+
+			</td>
+		</tr>
+		</table><!-- ** FORM GROUP -->
+
+		</div>
+	<SCRIPT language='JavaScript' type='text/javascript'>function postFilter(){}</SCRIPT></form>
+
+<div class="table-list" id="movements_list_id">
+	<!-- ++ LIST --><table id="transaction-history">
+		<tr>
+			<th nowrap="nowrap" class='active highlight'><a  href='javascript:sort("mov_listSortingSet", "ACM.ValueDate:asc:D_AND_TO_NUMBER(ACM.description5):asc:N_AND_ACM.PartnerValueDate:asc:D")' title="Seřadit podle sloupce.">Zaúčtováno</a> <img src='images/icons/asc.gif' alt='' border='0' /></th>
+		
+			<th nowrap="nowrap"><a  href='javascript:sort("mov_listSortingSet", "transDescription:desc:S")' title="Seřadit podle sloupce.">Typ platby</a><br /><span title="">Můj účet -</span>&nbsp;<span title="">Protiúčet</span><br /><span><span title="">Detail platby</span></span></th>
+			<th nowrap="nowrap" class='number'><a  href='javascript:sort("mov_listSortingSet", "/XMLEXT/VARIABLESYMBOL:desc:S#ACM.xmlext")' title="Seřadit podle sloupce.">Variabilní symbol</a></th>
+			<th nowrap="nowrap" class='amount'><span><a  href='javascript:sort("mov_listSortingSet", "ACM.cdind:desc:S_AND_decode(ACM.cdind,|DR|, ACM.amount * -1, ACM.amount):asc:S")' title="Seřadit podle sloupce.">Částka</a></span></th>
+		
+			<th nowrap="nowrap"></th> 
+		</tr>
+		
+		<tr id='a1'  class='outgoing'>
+			
+			
+                       <td class='highlight'><strong>17.01.2017</strong></td>
+                   
+                       
+                        
+                        
+                        
+		
+			<td  align='right' id=addCatTD0><a id="detailaddCat0" href="javascript:post('mov_detail', '118492238', '');void(0);" title='Detail transakce'><strong>Platba kartou</strong></a> <a id="addCat0" href="javascript:setAcmtId(118291628,'addCat0');void(0);" title='Přidat kategorii'><img src="images/ico-add-simple.gif" title='Přidat kategorii'/></a><br/><span class='small'>Běžný účet -> ONE CAFE, PRAHA 8<br/><br/></span></td>
+			<td class='number'></td>
+			<td class='amount'>-150,00&nbsp;CZK<br /></td>
+		
+					
+			<td class='actions' nowrap="nowrap" align='left'>
+			
+				
+				
+                                
+			
+			</td>
+    	</tr>
+<tr id='a2'  class='outgoing'>
+			
+			
+                       <td class='highlight'><strong>16.01.2017</strong></td>
+                   
+                       
+                        
+                        
+                        
+		
+			<td  align='right' id=addCatTD1><a id="detailaddCat1" href="javascript:post('mov_detail', '1233444380', '');void(0);" title='Detail transakce'><strong>Platba kartou</strong></a> <a id="addCat1" href="javascript:setAcmtId(133324333,'addCat1');void(0);" title='Přidat kategorii'><img src="images/ico-add-simple.gif" title='Přidat kategorii'/></a><br/><span class='small'>Běžný účet -> ORDR, PRAGUE<br/><br/></span></td>
+			<td class='number'></td>
+			<td class='amount'>-140,00&nbsp;CZK<br /></td>
+		
+					
+			<td class='actions' nowrap="nowrap" align='left'>
+			
+				
+				
+                                
+			
+			</td>
+    	</tr>
+<tr id='a3'  class='outgoing'>
+			
+			
+                       <td class='highlight'><strong>16.01.2017</strong></td>
+                   
+                       
+                        
+                        
+                        
+		
+			<td  align='right' id=addCatTD2><a id="detailaddCat2" href="javascript:post('mov_detail', '1356668414', '');void(0);" title='Detail transakce'><strong>Platba kartou</strong></a> <a id="addCat2" href="javascript:setAcmtId(1183222434,'addCat2');void(0);" title='Přidat kategorii'><img src="images/ico-add-simple.gif" title='Přidat kategorii'/></a><br/><span class='small'>Běžný účet -> VODAFONE CZECH REPUBLI, PRAHA 10<br/><br/></span></td>
+			<td class='number'></td>
+			<td class='amount'>-384,00&nbsp;CZK<br /></td>
+		
+					
+			<td class='actions' nowrap="nowrap" align='left'>
+			
+				
+				
+                                
+			
+			</td>
+    	</tr>
+<tr id='a14'  class='incoming'>
+			
+			
+                       <td class='highlight'><strong>15.01.2017</strong></td>
+                   
+                       
+                        
+                        
+                        
+		
+			<td  align='right' id=addCatTD13><a id="detailaddCat13" href="javascript:post('mov_detail', '124565377', '');void(0);" title='Detail transakce'><strong>P&#345;&#237;choz&#237; platba v&#160;r&#225;mci Equa bank</strong></a> <a id="addCat13" href="javascript:setAcmtId(136561317,'addCat13');void(0);" title='Přidat kategorii'><img src="images/ico-add-simple.gif" title='Přidat kategorii'/></a><br/><span class='small'>Spořící účet EXTRA <- Běžný účet<br/><br/></span></td>
+			<td class='number'></td>
+			<td class='amount'>+80 000,00&nbsp;CZK<br /></td>
+		
+					
+			<td class='actions' nowrap="nowrap" align='left'>
+			
+				
+				
+                                
+			
+			</td>
+    	</tr>
+<tr id='a15'  class='outgoing'>
+			
+			
+                       <td class='highlight'><strong>15.01.2017</strong></td>
+                   
+                       
+                        
+                        
+                        
+		
+			<td  align='right' id=addCatTD14><a id="detailaddCat14" href="javascript:post('mov_detail', '112574351', '');void(0);" title='Detail transakce'><strong>Platba v r&#225;mci Equa bank</strong></a> <a id="addCat14" href="javascript:setAcmtId(116271301,'addCat14');void(0);" title='Přidat kategorii'><img src="images/ico-add-simple.gif" title='Přidat kategorii'/></a><br/><span class='small'>Běžný účet -> Spořící účet EXTRA<br/><br/></span></td>
+			<td class='number'></td>
+			<td class='amount'>-80 000,00&nbsp;CZK<br /></td>
+		
+					
+			<td class='actions' nowrap="nowrap" align='left'>
+			
+				
+					<a id='repeatPayment_311.13.55236216.1' href="javascript:post('mov_repeatPayment', '121.33.55262826.1','','','','','','','','','','','','','','','','','')"  title='Zopakovat platbu'><img class='listBodyButtonClass' src='images/ico-repeat.gif' alt='Zopakovat platbu' name='repeatPayment' border='0' onmouseover='return st(this)' onmouseout='return st()' /></a>
+
+				
+				
+					<a id='saveAsTemplate_311.13.5523386.1' href="javascript:post('mov_saveAsTemplate', '121.33.55233336.1','mov_filterPage:0','','','','','','','','','','','','','','','','')"  title='Uložit jako šablonu'><img class='listBodyButtonClass' src='images/ico-new-template.gif' alt='Uložit jako šablonu' name='saveAsTemplate' border='0' onmouseover='return st(this)' onmouseout='return st()' /></a>
+
+				
+                                
+			
+			</td>
+    	</tr>
+
+	</table><!-- ** LIST -->
+</div>
+	
+   	
+   	<div  class="form-actions" >
+		
+		
+<a id="printID" href='javascript:void(0);' onclick='javascript:printPopup("mov_listPrint", "", "", "", "", "", "", "..."); return false;'  tabindex="19"  class="btn" title="Tento výběr můžete vytisknout.">
+   Tisk
+</a>
+
+		
+<a id="exportXMLID" href='javascript:void(0);' onclick='javascript:post("mov_exportXML"); return false;'  tabindex="20"  class="btn" title="Tento výběr můžete exportovat do formátu XML, který je určený k výměně dat mezi aplikacemi.">
+   Export XML
+</a>
+
+		
+<a id="exportCSVID" href='javascript:void(0);' onclick='javascript:post("mov_exportCSV"); return false;'  tabindex="21"  class="btn" title="Tento výběr můžete exportovat do formátu CSV, který je určený k výměně tabulkových dat.">
+   Export CSV
+</a>
+
+	</div>
+	<br />	<br />
+   	<!-- + PageIndicator--><div class="pagination"><table><tbody><tr><td><a class='button' href='javascript:post("mov_listGoToPage", 1)'><span>Jít na první</span></a><a class='button prev' href='javascript:post("mov_listGoToPage", 2)'><span><</span></a></td><td class="pages"><ul><li><div><a href='javascript:post("mov_listGoToPage", 1)'>1</a></div></li> <li><div><a href='javascript:post("mov_listGoToPage", 2)'>2</a></div></li> <li class="current"><div><a>3</a></div></li></ul></td><td></td></tr></tbody></table></div><!-- * PageIndicator-->
+
+
+
+
+</div>
+<div id="col">
+<h2>Moje účty</h2>
+<div id="accounts">
+<div class="account overdraw">
+<h3><a href="javascript:post('account_accountDetail','1111111111','123456');">Běžný účet</a></h3>
+<p class="total"><a href="javascript:post('mov_filterPage', '1111111111');">12 345,67&nbsp;CZK</a></p>
+<div class="clr"></div>
+<p class="account-info">
+1111111111/6100
+</p>
+<p class="balance">účetní zůstatek&nbsp;12 345,67&nbsp;CZK</p>
+<div class="clr"></div>
+</div>
+<div class="account overdraw">
+<h3><a href="javascript:post('account_accountDetail','1111111112','123456');">Spořící účet EXTRA</a></h3>
+<p class="total"><a href="javascript:post('mov_filterPage', '1111111112');">888 888,88&nbsp;CZK</a></p>
+<div class="clr"></div>
+<p class="account-info">
+1111111112/6100
+</p>
+<p class="balance">účetní zůstatek&nbsp;999 999,99&nbsp;CZK</p>
+<div class="clr"></div>
+</div>
+</div>
+<div id="tip"><h4>Info box!</h4><div class="tip-content"><p>Všechny transakce na Vašich účtech, příchozí i odchozí platby, zúčtovaní poplatků a úroků. Transakce je možné filtrovat podle konkrétního účtu, částky, data realizace a jiných parametrů.</p></div></div><span id="tipDefault" style="display: none"><div id="tip"><h4>Info box!</h4><div class="tip-content"><p>Všechny transakce na Vašich účtech, příchozí i odchozí platby, zúčtovaní poplatků a úroků. Transakce je možné filtrovat podle konkrétního účtu, částky, data realizace a jiných parametrů.</p></div></div></span></div>	
+           <div class="clr"></div>
+</div>
+</div>
+<script type="text/javascript">
+addMovableElement("CONFIRMATIONDIALOGID"+RESET_Z);makeMovable(movableElements);showEndingSessionWarning(1680,"Pokračovat","Přejit na přihlašovací stranu","Přihlášení ukončeno.","Z důvodu bezpečnosti budete automaticky odhlášeni ze systému za","sek.");
+</script>
+ <div id="footer"><div id="footer-holder">
+<ul>
+<li>
+<a target="_blank" href="http://www.equabank.cz/kontakt/">Kontakt</a></li>
+<li>
+<a target="_blank" href="https://www.equabank.cz/dulezite-dokumenty">Podmínky používání</a></li>
+<li>
+</ul>
+<p class="help">V případě dotazů volejte&nbsp;<strong>+420&nbsp;222&nbsp;010&nbsp;222</strong><br />          nebo pište na <a href="mailto:klientske.centrum@equabank.cz">klientske.centrum@equabank.cz</a>
+</p>
+<p class="url">
+<a target="_blank" href="http://www.equabank.cz/">www.equabank.cz</a>
+</p>
+         </div></div>
+<!-- TRACKING CODE START-->
+<!-- TRACKING CODE END -->
+<!-- documentBodyTag-end -->
+
+
+
+
+
+<div class="noprint"> 
+</div>
+ <div class="applicationVersion">1.92.0.0_HF2</div>
+</body>
+</html>
+

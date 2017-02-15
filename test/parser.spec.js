@@ -28,7 +28,7 @@ describe('Parser tests', () => {
     expect(parseBalance('12 345,67 CZK')).to.eql({ balance: 12345.67, currency: 'CZK' })
   })
 
-  describe('Transactions history parsing', () => {
+  describe('Transactions history page parsing', () => {
 
     let transactions = []
 
@@ -40,7 +40,7 @@ describe('Parser tests', () => {
       expect(result.transactions).to.be.an('array')
       expect(result.transactions.length).to.eql(5)
       console.log(result.transactions)
-      transactions = result.transactions
+      transactions = result.transactions      
       done()
     })
 
@@ -64,7 +64,52 @@ describe('Parser tests', () => {
       expect(t.to).to.eql('Spořící účet EXTRA')
       expect(t.amount.balance).to.eql(80000)
       expect(t.amount.currency).to.eql('CZK')
-    })    
+    }) 
+
+    describe('Pagination parsing', () => {
+      it('Should parse the first page of many pages', () => {
+        const transactionsPage = fs.readFileSync('./test/resources/pagination/first.html').toString()
+        const $ = processPage(transactionsPage).parsed
+        const { pagination } = parser.parseTransactionsPage($)
+
+        expect(pagination).to.be.an('object')
+        expect(pagination.pages).to.be.an('array')
+        expect(pagination.pages.length).to.eql(3)
+        expect(pagination.currentPage).to.eql(1)
+        expect(pagination.prevPage).to.eql(null)        
+        expect(pagination.nextPage).to.eql(2)
+        expect(pagination.lastPage).to.eql(3)
+      })   
+
+      it('Should parse a middle page of many pages', () => {
+        const transactionsPage = fs.readFileSync('./test/resources/pagination/middle.html').toString()
+        const $ = processPage(transactionsPage).parsed
+        const { pagination } = parser.parseTransactionsPage($)
+        
+        expect(pagination).to.be.an('object')
+        expect(pagination.pages).to.be.an('array')
+        expect(pagination.pages.length).to.eql(3)
+        expect(pagination.currentPage).to.eql(2)
+        expect(pagination.prevPage).to.eql(1)
+        expect(pagination.nextPage).to.eql(3)
+        expect(pagination.lastPage).to.eql(3)
+      })   
+
+      it('Should parse the last page of many pages', () => {
+        const transactionsPage = fs.readFileSync('./test/resources/pagination/last.html').toString()
+        const $ = processPage(transactionsPage).parsed
+        const { pagination } = parser.parseTransactionsPage($)
+
+        expect(pagination).to.be.an('object')
+        expect(pagination.pages).to.be.an('array')
+        expect(pagination.pages.length).to.eql(3)
+        expect(pagination.currentPage).to.eql(3)
+        expect(pagination.prevPage).to.eql(2)        
+        expect(pagination.nextPage).to.eql(null)
+        expect(pagination.lastPage).to.eql(3)
+      })   
+
+    })
   })
 
 })

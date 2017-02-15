@@ -37,6 +37,7 @@ function parseHomePage($) {
 module.exports.parseHomePage = parseHomePage
 
 function parseTransactionsPage($) {
+  // parse all the transactions on the page
   const transactions = []
   const transactionElements = $('table#transaction-history tr').next()
   transactionElements.each((index, transaction) => {
@@ -56,8 +57,40 @@ function parseTransactionsPage($) {
     const amount = parseBalance(transaction.find('td.amount').text())
     transactions.push({ date, type, direction, from, to, amount })
   })
+
+  // parse pagination
+  const pages = []
+  $('div.pagination li').each((index, page) => parseInt(pages.push($(page).text())))
+  
+  const currentPage = parseInt($('div.pagination li.current').text())
+  
+  let lastPage = currentPage
+  const lastPageElement = $('div.pagination a.button:contains("poslední")')
+  if (lastPageElement.length) {
+    lastPage = parseInt(lastPageElement.attr('href').match(/\d+/g)[0])
+  }
+  
+  let prevPage = null
+  const prevPageElement = $('div.pagination a.button.prev')
+  if (prevPageElement.length > 0) {
+    prevPage = parseInt(prevPageElement.attr('href').match(/\d+/g)[0])
+  }
+  
+  let nextPage = null
+  const nextPageElement = $('div.pagination a.button.next')
+  if (nextPageElement.length) {
+    nextPage = parseInt(nextPageElement.attr('href').match(/\d+/g)[0])
+  }
+
   return {
-    transactions
+    transactions,
+    pagination: {
+      pages,
+      currentPage,
+      prevPage,
+      nextPage,
+      lastPage
+    }
   }
 }
 
