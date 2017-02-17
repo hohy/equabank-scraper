@@ -1,7 +1,7 @@
 'use strict'
 
 const expect = require('chai').expect
-const equabank = require('../index')
+const equabank = require('../index')({ debugMode: true })
 const fs = require('fs')
 
 describe('Lets do some basic testing', () => {

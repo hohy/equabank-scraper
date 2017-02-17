@@ -4,10 +4,29 @@ const utils = require('./utils')
 const parser = require('./parser')
 const axios = require('axios')
 const cheerio = require('cheerio')
+const pino = require('pino')
+const pretty = pino.pretty()
+pretty.pipe(process.stdout)
+let logger = pino({ level: 'silent' }, pretty)
 
 /**
  * Main module of the Equabank-scraper library.
  */
+
+const defaultOptions = {
+  debugMode: false
+}
+
+// init function
+function init(opts) {
+  opts = Object.assign({}, defaultOptions, opts)
+  if (opts.debugMode) {
+    logger = pino({ level: 'debug' }, pretty)
+  }
+  
+  logger.info('Equabank scrapper initialised')
+}
+module.exports = init
 
 // http client instance
 const http = axios.create({
@@ -104,19 +123,20 @@ function login(username, password, callback) {
 module.exports.login = login
 
 function getTransactions(action, callback) {
-  let page
+  const transactions = []
+  let pageData
   return http.post(action, generateCommandString('mov_filterPage'))
     .then(response => {
       console.log('Transactions page loaded.')
-      page = processPage(response.data)
+      pageData = processPage(response.data)
     })
     .catch(err => {
       throw new Error('Error while loading login page', err)
     })
     .then(() => {
-      return utils.writeToFile('/tmp/transactions.html', page.raw)
+      return utils.writeToFile('/tmp/transactions.html', pageData.raw)
     })
-  .then(callback)
+    .then(callback)
 }
 module.exports.getTransactions = getTransactions
 
