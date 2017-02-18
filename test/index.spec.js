@@ -1,7 +1,7 @@
 'use strict'
 
 const expect = require('chai').expect
-const equabank = require('../index')({ debugMode: true })
+const equabank = require('../index')({ debug: true })
 const fs = require('fs')
 
 describe('Lets do some basic testing', () => {
@@ -15,13 +15,6 @@ describe('Lets do some basic testing', () => {
           console.error(err)
         })
     })
-
-  it('Should parse the home page', done => {
-    const homePage = fs.readFileSync('./resources/home.html')
-    const result = equabank.parseHomePage(homePage)
-    console.log(JSON.stringify(result))
-    done()
-  })
 })
 
 

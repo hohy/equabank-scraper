@@ -1,32 +1,23 @@
 'use strict'
 
+/**
+ * Main module of the Equabank-scraper library.
+ */
+const logger = require('./logger')
+let log
+module.exports = (opts = { debug: false }) => {
+  if ( opts.debug ) {
+    log = logger('debug')
+    log.info('Equabank scraper initialised')
+  }
+  return module.exports  
+}
+log = logger()
+
 const utils = require('./utils')
 const parser = require('./parser')
 const axios = require('axios')
 const cheerio = require('cheerio')
-const pino = require('pino')
-const pretty = pino.pretty()
-pretty.pipe(process.stdout)
-let logger = pino({ level: 'silent' }, pretty)
-
-/**
- * Main module of the Equabank-scraper library.
- */
-
-const defaultOptions = {
-  debugMode: false
-}
-
-// init function
-function init(opts) {
-  opts = Object.assign({}, defaultOptions, opts)
-  if (opts.debugMode) {
-    logger = pino({ level: 'debug' }, pretty)
-  }
-  
-  logger.info('Equabank scrapper initialised')
-}
-module.exports = init
 
 // http client instance
 const http = axios.create({
@@ -48,7 +39,7 @@ const http = axios.create({
  */
 function login(username, password, callback) {
   let page
-  console.log('Loading login page...')
+  log.info('Loading login page...')
     // load the login page
   const getLoginData = {
     javaVM: 7,
@@ -57,7 +48,7 @@ function login(username, password, callback) {
   }
   return http.post('/ControllerServlet', utils.object2FormData(getLoginData))
     .then(response => {
-      console.log('Login page loaded.')
+      log.debug('Login page loaded.')
       if (response.status === 200) {
         return response.data
       }
@@ -94,10 +85,10 @@ function login(username, password, callback) {
         loginByMK_username: username,
         loginByMK_password: password
       }
-      console.log('Performing login, loading home page ...')
+      log.info('Performing login, loading home page ...')
       return http.post(`/${loginData.loginAction}`, utils.object2FormData(loginFormData))
       .then(response => {
-        console.log('Home page loaded')
+        log.debug('Home page loaded')
         page = processPage(response.data)
       })
       .catch(err => {

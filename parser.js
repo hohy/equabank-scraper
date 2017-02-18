@@ -1,4 +1,5 @@
 'use strict'
+const log = require('./logger')()
 const moment = require('moment')
 
 /**
@@ -17,6 +18,8 @@ module.exports.parseAction = parseAction
  * @return {Object} information about accounts and last transactions
  */
 function parseHomePage($) {
+  log.debug('Parsing home page')
+
   // Check if we have the correct page
   if ($('body#homepage')) {
     // get list of accounts
@@ -29,6 +32,8 @@ function parseHomePage($) {
       const balance = parseBalance(account.find('td.total').text())
       accounts.push({ id, name, balance: balance.balance, currency: balance.currency })
     })
+
+    log.info('Parsed accounts', accounts)
     return { accounts }
   }
   throw new Error('Error while paring home page')
@@ -37,6 +42,8 @@ function parseHomePage($) {
 module.exports.parseHomePage = parseHomePage
 
 function parseTransactionsPage($) {
+  log.debug('Parsing transaction history page')
+
   // parse all the transactions on the page
   const transactions = []
   const transactionElements = $('table#transaction-history tr').next()
@@ -82,6 +89,7 @@ function parseTransactionsPage($) {
     nextPage = parseInt(nextPageElement.attr('href').match(/\d+/g)[0])
   }
 
+  log.info('Parsed transactions', transactions)
   return {
     transactions,
     pagination: {
