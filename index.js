@@ -114,7 +114,7 @@ function login(username, password, callback) {
 module.exports.login = login
 
 function getTransactions(action, callback) {
-  const transactions = []
+  log.info('Getting transactions page')   
   let pageData
   return http.post(action, generateCommandString('mov_filterPage'))
     .then(response => {
@@ -122,14 +122,46 @@ function getTransactions(action, callback) {
       pageData = processPage(response.data)
     })
     .catch(err => {
-      throw new Error('Error while loading login page', err)
+      throw new Error('Error while loading transactions page', err)
     })
     .then(() => {
       return utils.writeToFile('/tmp/transactions.html', pageData.raw)
     })
+    .then(() => {
+      const { transactions, pagination } = parser.parseTransactionsPage(pageData.parsed)
+      if (pagination.currentPage < pagination.lastPage) {
+        return getTransactionsNextPage(pageData.action, pagination.nextPage, transactions)
+      }
+      return { action: pageData.action, transactions }
+    })
     .then(callback)
 }
 module.exports.getTransactions = getTransactions
+
+function getTransactionsNextPage(action, page, allTransactions) {
+  log.info('Getting transactions page', page)
+  let pageData
+  return http.post(action, utils.object2FormData({ command: 'mov_listGoToPage', custom1: page}))
+    .then(response => {
+      log.debug('Transaction page loaded')
+      pageData = processPage(response.data)
+    })
+    .catch(err => {
+      throw new Error('Error while loading transactions page', err)
+    })
+    .then(() => {
+      return utils.writeToFile(`/tmp/transactions-${page}.html`, pageData.raw)
+    })      
+    .then(() => {
+      const { pageTransactions, pagination } = parser.parseTransactionsPage(pageData.parsed)
+      allTransactions.push(pageTransactions)
+      if (pagination.currentPage < pagination.lastPage) {
+        return getTransactionsNextPage(pageData.action, pagination.nextPage, allTransactions)
+      }
+      return { action: pageData.action, transactions: allTransactions }
+    })    
+
+}
 
 /**
  * Construct string that is posted to the IBS ControllerServlet describing

@@ -48,21 +48,31 @@ function parseTransactionsPage($) {
   const transactions = []
   const transactionElements = $('table#transaction-history tr').next()
   transactionElements.each((index, transaction) => {
+    log.debug('Parsing transaction', index)
     transaction = $(transaction)
-    const date = moment(transaction.find('td.highlight strong').text(), 'DD.MM.YYYY').toDate()
+    const date = moment(transaction.find('.highlight strong').text(), 'DD.MM.YYYY').toDate()
     const type = transaction.find('td a strong').text()
     const fromToString = transaction.find('td span.small').text()
     const direction = transaction.attr('class')
-    let from, to
+    let from, to    
     if (direction === 'outgoing') {
-      from = fromToString.split('->')[0].trim()
-      to = fromToString.split('->')[1].trim()
+      if (fromToString.indexOf('->') >= 0) {
+        from = fromToString.split('->')[0].trim()
+        to = fromToString.split('->')[1].trim()
+      } else {
+        from = fromToString.trim()
+      }
     } else {
-      from = fromToString.split('<-')[1].trim()
-      to = fromToString.split('<-')[0].trim()    
+      if (fromToString.indexOf('<-') >= 0) {
+        from = fromToString.split('<-')[1].trim()
+        to = fromToString.split('<-')[0].trim()    
+      } else {
+        to = fromToString.trim()
+      }
     }
     const amount = parseBalance(transaction.find('td.amount').text())
     transactions.push({ date, type, direction, from, to, amount })
+    log.debug('Parsed transaction', transactions[transactions.length - 1])
   })
 
   // parse pagination

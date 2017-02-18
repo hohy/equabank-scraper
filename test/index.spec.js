@@ -18,11 +18,14 @@ describe('Lets do some basic testing', () => {
 })
 
 
-describe('Transaction history page tests', () => {
+describe('Transactions history page tests', () => {
   it('Shold load the transaction history page', function test() {
     this.timeout(10000)
     return equabank.login(process.env.EQUA_USERNAME, process.env.EQUA_PASSWORD).then(login => {
-      return equabank.getTransactions(login.action)
+      return equabank.getTransactions(login.action).then(results => {
+        expect(results.action).to.be.a('string')
+        expect(results.transactions).to.be.an('array')
+      })
     })
   })
 })
