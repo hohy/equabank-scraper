@@ -35,3 +35,17 @@ module.exports.writeToFile = (fileName, data) => {
     })
   })
 }
+
+/**
+ * Promisified setTimeout function
+ * @param {Number} duration Timeout duration
+ * @return {Promise} Promisified timeout
+ */
+module.exports.delay = (duration) => {
+  console.log(`Waiting for ${duration} ms.`)
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, duration)
+  })
+}

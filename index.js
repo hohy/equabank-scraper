@@ -18,6 +18,7 @@ const utils = require('./utils')
 const parser = require('./parser')
 const axios = require('axios')
 const cheerio = require('cheerio')
+const moment = require('moment')
 
 // http client instance
 const http = axios.create({
@@ -113,9 +114,26 @@ function login(username, password, callback) {
 }
 module.exports.login = login
 
-function getTransactions(action, callback) {
+/**
+ * Function to get history of transactions.
+ * @param {String} action Action string returned by login request or any previous callback
+ * @param {Date} startDate Date of the oldest transaction
+ * @param {Date} endDate Date of the newest transaction
+ * @param {function} progress Callback indicating progress of the operation
+ * @param {function} callback Callback fucntion executed when operation is finished
+ * @returns {Promise} Object with transactions history
+ */
+function getTransactions(action, startDate = moment().subtract(3, 'days'), 
+  endDate = moment(), progress, callback) {
   log.info('Getting transactions page')   
+
+  if (moment(endDate).diff(moment(startDate)) < 0) {
+    throw new Error('End date is newer that start date.')
+  }
+
   let pageData
+
+  // Load transaction history page
   return http.post(action, generateCommandString('mov_filterPage'))
     .then(response => {
       console.log('Transactions page loaded.')
@@ -128,9 +146,48 @@ function getTransactions(action, callback) {
       return utils.writeToFile('/tmp/transactions.html', pageData.raw)
     })
     .then(() => {
+      // set filter parameters and load first page with transactions
+      const commandObject = {
+        command: 'mov_filterVerify',
+        verificationGroupName: 'transactionHistoryFilter',
+        useGDMVerification: 'false',
+        transactionsFilterStatus: 'open',
+        accountNumber: 0,
+        accountId: '',
+        period: 'user',
+        startDateRef: startDate.format('DD.MM.YYYY'),
+        endDateRef: endDate.format('DD.MM.YYYY'),
+        fromAmount: '',
+        toAmount: '',
+        creditAccountNumberFull: '%',
+        creditAccountPrefix: '',
+        creditAccountNumber: '',
+        creditBankCode: '',
+        variableSymbol: '',
+        transactionType: 6,
+        kategorie: ''
+      }
+
+      log.debug('Setting transactions filter', commandObject)
+      return http.post(pageData.action, utils.object2FormData(commandObject))
+    })
+    .then(response => {
+      console.log('Transactions page loaded.')
+      pageData = processPage(response.data)
+    })
+    .catch(err => {
+      throw new Error('Error while loading transactions page', err)
+    })    
+    .then(() => {
+      return utils.writeToFile('/tmp/transactions-1.html', pageData.raw)
+    })    
+    .then(() => {
       const { transactions, pagination } = parser.parseTransactionsPage(pageData.parsed)
       if (pagination.currentPage < pagination.lastPage) {
-        return getTransactionsNextPage(pageData.action, pagination.nextPage, transactions)
+        // let's add 1000ms delay between the requests
+        return utils.delay(1000).then(() => {
+          return getTransactionsNextPage(pageData.action, pagination.nextPage, transactions)       
+        })
       }
       return { action: pageData.action, transactions }
     })
@@ -156,7 +213,9 @@ function getTransactionsNextPage(action, page, allTransactions) {
       const { pageTransactions, pagination } = parser.parseTransactionsPage(pageData.parsed)
       allTransactions.push(pageTransactions)
       if (pagination.currentPage < pagination.lastPage) {
-        return getTransactionsNextPage(pageData.action, pagination.nextPage, allTransactions)
+        return utils.delay(1000).then(() => {
+          return getTransactionsNextPage(pageData.action, pagination.nextPage, allTransactions)
+        })        
       }
       return { action: pageData.action, transactions: allTransactions }
     })    
